@@ -52,3 +52,18 @@ def refresh_bookings_df(app,db):
             print("Columns in bookings_df:", bookings_df.columns)
             bookings_df['start_date'] = pd.to_datetime(bookings_df['start_date'])
             bookings_df['end_date'] = pd.to_datetime(bookings_df['end_date'])
+            
+
+    # Function to get physical rooms from the database
+def get_physical_rooms(app,Listings):
+    physical_rooms = {"AC": {}, "EC": {}}
+    with app.app_context():
+        listings = Listings.query.all()
+        for listing in listings:
+            room_type = listing.room[:2]  # Assuming room type is determined by the first two characters
+            if room_type not in physical_rooms:
+                physical_rooms[room_type] = {}
+            if listing.room not in physical_rooms[room_type]:
+                physical_rooms[room_type][listing.room] = []
+            physical_rooms[room_type][listing.room].append(listing.listing_name)
+    return physical_rooms

@@ -40,13 +40,11 @@
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" onclick="closeFilterModel()"></button>
                         </div>
                         <div class="modal-body">
-                            <!-- Guest Name Filter Form -->
                             <div id="guestNameFilter" class="filter-form" style="display: none;">
                                 <label for="guestNameInput" class="form-label">Guest Name</label>
                                 <input type="text" id="guestNameInput" class="form-control" placeholder="Enter guest name">
                             </div>
         
-                            <!-- Date Range Filter Form -->
                             <div id="dateRangeFilter" class="filter-form" style="display: none;">
                                 <label for="fromDate" class="form-label">From Date</label>
                                 <input type="date" id="fromDate" class="form-control">
@@ -67,17 +65,7 @@
             <div class="col-md-4">
                 <h2 style="margin-bottom: 40px;">Earnings Summary</h2>
 
-                <div class="col-md-auto">
-                    <div class="dropdown">
-                        <button class="btn btn-primary dropdown-toggle" type="button" id="filterDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-                            Filter By
-                        </button>
-                        <ul class="dropdown-menu" aria-labelledby="filterDropdown">
-                            <li><a class="dropdown-item" href="#" onclick="openFilterModal('guestName')">Guest Name</a></li>
-                            <li><a class="dropdown-item" href="#" onclick="openFilterModal('dateRange')">From To Date</a></li>
-                        </ul>
-                    </div>
-                </div>
+  
                 <div id="earningsSummary" class="row"> <!-- Added class "row" for horizontal stacking -->
                     <div class="col-6"> <!-- Each card takes half the width -->
                         <div class="card mb-3"> <!-- Added margin-bottom for spacing -->
@@ -140,9 +128,20 @@
             </div>
         </div>
 
-        <div class="row">
-            <div class="col-md-12 mt-5">
+        <div class="row  mt-5">
+            <div class="col-md-auto justify-content-between ">
                 <h2>Earnings Report</h2>
+            </div>
+            <div class="col-md-auto">
+                <div class="dropdown">
+                    <button class="btn btn-primary dropdown-toggle" type="button" id="filterDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                        Filter By
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="filterDropdown">
+                        <li><a class="dropdown-item" href="#" onclick="openFilterModal('guestName')">Guest Name</a></li>
+                        <li><a class="dropdown-item" href="#" onclick="openFilterModal('dateRange')">From To Date</a></li>
+                    </ul>
+                </div>
             </div>
         </div>
         <!-- Bottom Section for Table Data -->
@@ -248,7 +247,7 @@
         let currentPage = 1; // Current page number
         let earningsData = []; // Store fetched earnings data
         let totalGrossEarnings = 0; // Initialize total gross earnings
-
+        
         // Function to fetch and display Earnings
         function fetchEarnings() {
             fetch(apiUrl)
@@ -256,8 +255,8 @@
                 .then(data => {
                     earningsData = data; // Store data for pagination
                     calculateTotalGrossEarnings(); // Calculate total gross earnings
-                    renderTable(); // Render the table with the first page
-                    renderPagination(); // Render pagination controls
+                    renderTable(earningsData); // Render the table with the first page
+                    renderPagination(earningsData); // Render pagination controls
                     renderEarningsChart(); // Render the earnings chart
                 });
         }
@@ -306,14 +305,15 @@
         }
 
         // Function to render the table based on the current page
-        function renderTable() {
+        function renderTable(EarningData) {
+            console.log("running...")
             const tableBody = document.getElementById('EarningTableBody');
             tableBody.innerHTML = '';
             const start = (currentPage - 1) * rowsPerPage;
-            const end = start + rowsPerPage;
-            earningsData.sort((a, b) => new Date(b.start_date) - new Date(a.start_date));
-            const paginatedData = earningsData.slice(start, end);
-
+            const end = start +  rowsPerPage;
+            EarningData.sort((a, b) => new Date(b.start_date) - new Date(a.start_date));
+            const paginatedData = EarningData.slice(start, end);
+            
             paginatedData.forEach((Earnings, index) => {
                 const row = document.createElement('tr');
                 const payoutDate = new Date(Earnings.date).toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' }).replace(/ /g, '-');
@@ -342,10 +342,10 @@
         }
 
         // Function to render pagination controls
-        function renderPagination() {
+        function renderPagination(EarningData) {
             const paginationControls = document.getElementById('paginationControls');
             paginationControls.innerHTML = '';
-            const totalPages = Math.ceil(earningsData.length / rowsPerPage);
+            const totalPages = Math.ceil(EarningData.length / rowsPerPage);
 
             for (let i = 1; i <= totalPages; i++) {
                 const li = document.createElement('li');
@@ -358,8 +358,8 @@
         // Function to change the current page
         function changePage(page, event) {
             currentPage = page;
-            renderTable(); // Re-render the table for the new page
-            renderPagination(); // Re-render pagination controls
+            renderTable(earningsData); // Re-render the table for the new page
+            renderPagination(earningsData); // Re-render pagination controls
             // Prevent scrolling to the top
             event.preventDefault(); // Prevent default anchor behavior
             document.getElementById('EarningTableBody').scrollIntoView({ behavior: 'smooth' }); // Scroll to the table
@@ -528,15 +528,31 @@
             filterModal.show();
         }
         function closeFilterModel(){
+
     if (filterModal) {
         filterModal.hide();
     }
         }
         function applyFilter() {
-            const guestName = document.getElementById('guestNameInput').value;
+            //const guestName = document.getElementById('guestNameInput').value;
             const fromDate = document.getElementById('fromDate').value;
             const toDate = document.getElementById('toDate').value;
-            console.log('filter data',guestName,fromDate,toDate)
+            console.log('filter data',fromDate,toDate)
+
+            const from = new Date(fromDate);
+            const to = new Date(toDate);
+
+            const filteredData=earningsData.filter(item => {
+                const startDate = new Date(item.start_date);
+                const endDate = new Date(item.end_date);
+                return (startDate >= from && startDate <= to) && (endDate >= from && endDate <= to);
+            });
+
+            console.log('filtered data',filteredData)
+            renderTable(filteredData)
+            renderPagination(filteredData)
+            if(filterModal)
+                filterModal.hide()
         }
 
         // Fetch Earnings on page load
