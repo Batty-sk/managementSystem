@@ -1,0 +1,390 @@
+{% extends "base.html" %}
+<title>{% block title %}Manage Listings{% endblock %}</title>
+{% block header %}
+<link
+  rel="stylesheet"
+  href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+/>
+{% endblock %} {% block styles %}
+<style>
+  .modal-dialog {
+    width: 100% !important;
+    height: 100% !important;
+  }
+  @media (min-width: 576px) {
+    .modal-dialog {
+      max-width: 80% !important; /* Override max width */
+      margin: 1.75rem auto;
+    }
+  }
+</style>
+{% endblock %} {% block content %}
+<div class="row mt-5 justify-content-between align-items-center">
+  <div class="col-md-auto">
+    <h1 class="">Manage Listings</h1>
+    <button
+      class="btn btn-primary mb-3"
+      data-toggle="modal"
+      data-target="#createListingModal"
+      >
+      Add New Listing
+    </button>
+  </div>
+  <div class="col-md-auto">
+    <label for="search"> Search: </label>
+    <input
+      type="search"
+      name="search"
+      id="searchInput"
+      placeholder="By Name"
+      style="font-size: medium"
+    />
+  </div>
+</div>
+<table class="table">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Listing Name</th>
+      <th>Room</th>
+      <th>Price</th>
+      <th>Platform</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody id="listingTableBody">
+    <!-- Listings will be populated here by JavaScript -->
+  </tbody>
+</table>
+
+<!-- Create Listing Modal -->
+<div
+  class="modal fade"
+  id="createListingModal"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="createListingModalLabel"
+  aria-hidden="true"
+  style="width: 100%; height: 100%"
+>
+  <div class="modal-dialog modal-fullscreen" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="createListingModalLabel">
+          Create New Listing
+        </h5>
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body d-flex justify-content-center align-items-center">
+        <form id="createListingForm" style="width: 100%; max-width: 80vw">
+          <input type="hidden" id="id" value="" />
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="listing_name">Listing Name</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="listing_name"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="room">Room</label>
+                <input type="text" class="form-control" id="room" />
+              </div>
+              <div class="form-group">
+                <label for="platform">Platform</label>
+                <input type="text" class="form-control" id="platform" />
+              </div>
+              <div class="form-group">
+                <label for="minimum_price">Minimum Price</label>
+                <input
+                  type="number"
+                  class="form-control"
+                  id="minimum_price"
+                  step="0.01"
+                />
+              </div>
+              <div class="form-group">
+                <label for="bed_type">Bed Type</label>
+                <input
+                  type="number"
+                  class="form-control"
+                  id="bed_type"
+                  step="0.01"
+                />
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="area_code">Area Code</label>
+                <input type="text" class="form-control" id="area_code" />
+              </div>
+              <div class="form-group">
+                <label for="platform_url">Platform URL</label>
+                <input type="text" class="form-control" id="platform_url" />
+              </div>
+              <div class="form-group">
+                <label for="platform_account">Platform Account</label>
+                <input type="text" class="form-control" id="platform_account" />
+              </div>
+              <div class="form-group">
+                <label for="maximum_price">Maximum Price</label>
+                <input
+                  type="number"
+                  class="form-control"
+                  id="maximum_price"
+                  step="0.01"
+                />
+              </div>
+              <div class="form-group">
+                <label for="no_of_bed">Number of Beds</label>
+                <input type="number" class="form-control" id="no_of_bed" />
+              </div>
+            </div>
+          </div>
+          <button
+            type="submit"
+            class="btn btn-primary"
+            id="createListingButton"
+          >
+            Create Listing
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %} {% block scripts %}
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script>
+  const LISTINGS = [];
+  let debounceTimeout;
+
+  const apiUrl = "/listings";
+
+  // Function to fetch and display listings
+  function fetchListings() {
+    fetch(apiUrl)
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        const tableBody = document.getElementById("listingTableBody");
+        tableBody.innerHTML = "";
+        data.forEach((listings) => {
+          const row = document.createElement("tr");
+          LISTINGS.push({
+            id: listings.id,
+            listing_name: listings.listing_name,
+            room: listings.room,
+            minimum_price: listings.minimum_price,
+            platform_account: listings.platform_account,
+          });
+          row.innerHTML = `
+                            <td>${listings.id}</td>
+                            <td>${listings.listing_name}</td>
+                            <td>${listings.room}</td>
+                            <td>${listings.minimum_price}</td>
+                            <td>${listings.platform_account}</td>
+                            <td>
+                                <button class="btn btn-warning btn-sm" onclick="editListing(${listings.id})">Edit</button>
+                                <button class="btn btn-danger btn-sm" onclick="deleteListing(${listings.id})">Delete</button>
+                            </td>
+                        `;
+          tableBody.appendChild(row);
+        });
+      });
+    document.getElementById("createListingForm").reset(); // Reset the form
+    $("#createListingModal").modal("dispose"); // Hide modal
+  }
+
+function debounceSearch(e) {
+    clearTimeout(debounceTimeout);
+    debounceTimeout = setTimeout(()=>{handleSearchQuery(e)}, 300);
+}
+
+  function handleSearchQuery(e) {
+    console.log('function calling')
+    console.log('e',e.target.value)
+    console.log("lisitings",LISTINGS)
+    if (!LISTINGS.length) {
+      alert("No Items For Searching....");
+      return 0;
+    }
+    const searchResult = LISTINGS.filter(
+      (item, index) => {
+        console.log('ITEM',item)
+       return item.listing_name.toLowerCase().startsWith(e.target.value.toLowerCase())
+       let c="a"
+    }
+    );
+    const tableBody = document.getElementById("listingTableBody");
+    console.log('search_result',searchResult)
+    if(!searchResult.length)
+    {
+        tableBody.innerHTML = "<h1>No Result Found!</h1>";
+        return 0
+    }
+    tableBody.innerHTML=""
+    searchResult.forEach(listing => {
+      const row = document.createElement("tr");
+      row.innerHTML = `
+        <td>${listing.id}</td>
+        <td>${listing.listing_name}</td>
+        <td>${listing.room}</td>
+        <td>${listing.minimum_price}</td>
+        <td>${listing.platform_account}</td>
+        <td>
+          <button class="btn btn-warning btn-sm" onclick="editListing(${listing.id})">Edit</button>
+          <button class="btn btn-danger btn-sm" onclick="deleteListing(${listing.id})">Delete</button>
+        </td>
+      `;
+      tableBody.appendChild(row);
+    });
+  }
+  
+
+  function callMe() {
+    console.log(count);
+    count += 1;
+  }
+
+  // Function to create a new listing
+  document
+    .getElementById("createListingForm")
+    .addEventListener("submit", function (event) {
+      event.preventDefault();
+      const newListing = {
+        id: document.getElementById("id").value,
+        listing_name: document.getElementById("listing_name").value,
+        room: document.getElementById("room").value,
+        area_code: document.getElementById("area_code").value,
+        platform: document.getElementById("platform").value,
+        platform_url: document.getElementById("platform_url").value,
+        platform_account: document.getElementById("platform_account").value,
+        minimum_price: parseFloat(
+          document.getElementById("minimum_price").value
+        ),
+        maximum_price: parseFloat(
+          document.getElementById("maximum_price").value
+        ),
+        bed_type: parseFloat(document.getElementById("bed_type").value),
+        no_of_bed: parseInt(document.getElementById("no_of_bed").value),
+      };
+
+      console.log(newListing);
+
+      if (newListing.id) {
+        fetch(`${apiUrl}/${newListing.id}`, {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(newListing),
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            alert(data.message);
+
+            $("#createListingModal").modal("hide"); // Hide modal
+            fetchListings();
+          });
+      } else {
+        fetch(apiUrl, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(newListing),
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            alert(data.message);
+            $("#createListingModal").modal("hide"); // Hide modal
+            fetchListings();
+          });
+      }
+    });
+
+  // Function to delete a listing
+  function deleteListing(id) {
+    fetch(`${apiUrl}/${id}`, {
+      method: "DELETE",
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        alert(data.message);
+        fetchListings();
+      });
+  }
+
+  // Function to edit a listing
+  function editListing(id) {
+    fetch(`${apiUrl}/${id}`)
+      .then((response) => response.json())
+      .then((listing) => {
+        // Populate the form with the listing data
+        console.log(listing);
+        document.getElementById("id").value = listing.id;
+        document.getElementById("listing_name").value = listing.listing_name;
+        document.getElementById("room").value = listing.room;
+        document.getElementById("area_code").value = listing.area_code;
+        document.getElementById("platform").value = listing.platform;
+        document.getElementById("platform_url").value = listing.platform_url;
+        document.getElementById("platform_account").value =
+          listing.platform_account;
+        document.getElementById("minimum_price").value = listing.minimum_price;
+        document.getElementById("maximum_price").value = listing.maximum_price;
+        document.getElementById("bed_type").value = listing.bed_type;
+        document.getElementById("no_of_bed").value = listing.no_of_bed;
+
+        document.getElementById("createListingButton").innerHTML =
+          "Update Listing";
+        // Show the modal
+        $("#createListingModal").modal("show");
+      });
+  }
+
+  // Function to initialize modal form fields
+  function initializeModalFields() {
+    document.getElementById("id").value = "";
+    document.getElementById("listing_name").value = "";
+    document.getElementById("room").value = "";
+    document.getElementById("area_code").value = "";
+    document.getElementById("platform").value = "";
+    document.getElementById("platform_url").value = "";
+    document.getElementById("platform_account").value = "";
+    document.getElementById("minimum_price").value = "";
+    document.getElementById("maximum_price").value = "";
+    document.getElementById("bed_type").value = "";
+    document.getElementById("no_of_bed").value = "";
+    document.getElementById("createListingButton").innerHTML =
+      "Create New Listing"; // Reset button text
+  }
+
+  // Reset form fields when the modal is shown
+  $(document).ready(function () {
+    $("#createListingModal").on("hide.bs.modal", function () {
+      initializeModalFields();
+      console.log("Modal is being cleaned");
+    });
+  });
+
+  // Fetch listings on page load
+  document.addEventListener("DOMContentLoaded", fetchListings);
+  document.addEventListener("DOMContentLoaded", function () {
+    const searchInput = document.getElementById("searchInput");
+    searchInput.oninput = debounceSearch;
+});
+</script>
+{% endblock %}

@@ -1,0 +1,18 @@
+<!-- templates/includes/header.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your App Title</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="{{ url_for('show_calendar') }}">Home</a></li>
+            <li><a href="{{ url_for('bookings') }}">Bookings</a></li>
+            <li><a href="{{ url_for('uploads') }}">Uploads</a></li>
+            <li><a href="{{ url_for('logout') }}">Logout</a></li>
+        </ul>
+    </nav>

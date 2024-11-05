@@ -1,0 +1,896 @@
+2024-10-22 17:23:22,814 INFO:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-10-22 17:23:22,815 INFO:[33mPress CTRL+C to quit[0m
+2024-10-22 17:26:00,806 INFO:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-10-22 17:26:00,806 INFO:[33mPress CTRL+C to quit[0m
+2024-10-22 17:28:55,409 INFO:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-10-22 17:28:55,410 INFO:[33mPress CTRL+C to quit[0m
+2024-10-22 17:29:55,765 INFO:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-10-22 17:29:55,766 INFO:[33mPress CTRL+C to quit[0m
+2024-10-22 17:30:03,466 ERROR:Exception on / [GET]
+Traceback (most recent call last):
+  File "C:\Users\user\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\Documents\Internship-work\bnbproject\app.py", line 341, in home
+    if(current_user.username == 'deepan'):
+       ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'AnonymousUserMixin' object has no attribute 'username'
+2024-10-22 17:30:03,471 INFO:127.0.0.1 - - [22/Oct/2024 17:30:03] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2024-10-22 17:30:03,548 INFO:127.0.0.1 - - [22/Oct/2024 17:30:03] "[32mGET /favicon.ico HTTP/1.1[0m" 302 -
+2024-10-22 17:30:03,567 INFO:127.0.0.1 - - [22/Oct/2024 17:30:03] "GET /login?next=/favicon.ico HTTP/1.1" 200 -
+2024-10-22 17:30:07,992 ERROR:Exception on / [GET]
+Traceback (most recent call last):
+  File "C:\Users\user\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\Documents\Internship-work\bnbproject\app.py", line 341, in home
+    if(current_user.username == 'deepan'):
+       ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'AnonymousUserMixin' object has no attribute 'username'
+2024-10-22 17:30:07,993 INFO:127.0.0.1 - - [22/Oct/2024 17:30:07] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2024-10-22 17:30:08,022 INFO:127.0.0.1 - - [22/Oct/2024 17:30:08] "[32mGET /favicon.ico HTTP/1.1[0m" 302 -
+2024-10-22 17:30:08,028 INFO:127.0.0.1 - - [22/Oct/2024 17:30:08] "GET /login?next=/favicon.ico HTTP/1.1" 200 -
+2024-10-22 17:30:13,859 ERROR:Exception on / [GET]
+Traceback (most recent call last):
+  File "C:\Users\user\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\Documents\Internship-work\bnbproject\app.py", line 341, in home
+    if(current_user.username == 'deepan'):
+       ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'AnonymousUserMixin' object has no attribute 'username'
+2024-10-22 17:30:13,865 INFO:127.0.0.1 - - [22/Oct/2024 17:30:13] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2024-10-22 17:30:13,943 INFO:127.0.0.1 - - [22/Oct/2024 17:30:13] "[32mGET /favicon.ico HTTP/1.1[0m" 302 -
+2024-10-22 17:30:13,954 INFO:127.0.0.1 - - [22/Oct/2024 17:30:13] "GET /login?next=/favicon.ico HTTP/1.1" 200 -
+2024-10-22 17:30:28,137 INFO:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-10-22 17:30:28,137 INFO:[33mPress CTRL+C to quit[0m
+2024-10-22 17:31:54,186 INFO:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-10-22 17:31:54,186 INFO:[33mPress CTRL+C to quit[0m
+2024-10-22 17:33:57,434 INFO:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:3000
+2024-10-22 17:33:57,434 INFO:[33mPress CTRL+C to quit[0m
+2024-10-22 17:34:02,903 ERROR:Exception on / [GET]
+Traceback (most recent call last):
+  File "C:\Users\user\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\Documents\Internship-work\bnbproject\app.py", line 341, in home
+    if(current_user.username == 'deepan'):
+       ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'AnonymousUserMixin' object has no attribute 'username'
+2024-10-22 17:34:02,911 INFO:127.0.0.1 - - [22/Oct/2024 17:34:02] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2024-10-22 17:34:03,165 INFO:127.0.0.1 - - [22/Oct/2024 17:34:03] "[32mGET /favicon.ico HTTP/1.1[0m" 302 -
+2024-10-22 17:34:03,177 INFO:127.0.0.1 - - [22/Oct/2024 17:34:03] "GET /login?next=/favicon.ico HTTP/1.1" 200 -
+2024-10-22 17:35:19,670 INFO:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8000
+ * Running on http://192.168.1.143:8000
+2024-10-22 17:35:19,670 INFO:[33mPress CTRL+C to quit[0m
+2024-10-22 17:35:19,672 INFO: * Restarting with stat
+2024-10-22 17:35:20,723 WARNING: * Debugger is active!
+2024-10-22 17:35:20,726 INFO: * Debugger PIN: 674-935-546
+2024-10-22 17:35:30,263 INFO:127.0.0.1 - - [22/Oct/2024 17:35:30] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2024-10-22 17:35:30,430 INFO:127.0.0.1 - - [22/Oct/2024 17:35:30] "GET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2024-10-22 17:35:30,509 INFO:127.0.0.1 - - [22/Oct/2024 17:35:30] "GET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2024-10-22 17:35:30,872 INFO:127.0.0.1 - - [22/Oct/2024 17:35:30] "GET /?__debugger__=yes&cmd=resource&f=console.png&s=kFfNwKrOte5nFQQTIrUQ HTTP/1.1" 200 -
+2024-10-22 17:35:31,124 INFO:127.0.0.1 - - [22/Oct/2024 17:35:31] "GET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2024-10-22 17:35:32,805 INFO:127.0.0.1 - - [22/Oct/2024 17:35:32] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2024-10-22 17:35:33,465 INFO:127.0.0.1 - - [22/Oct/2024 17:35:33] "GET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2024-10-22 17:35:33,466 INFO:127.0.0.1 - - [22/Oct/2024 17:35:33] "GET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2024-10-22 17:35:33,485 INFO:127.0.0.1 - - [22/Oct/2024 17:35:33] "GET /?__debugger__=yes&cmd=resource&f=console.png&s=kFfNwKrOte5nFQQTIrUQ HTTP/1.1" 200 -
+2024-10-22 17:35:33,488 INFO:127.0.0.1 - - [22/Oct/2024 17:35:33] "GET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2024-10-22 17:35:33,575 INFO:127.0.0.1 - - [22/Oct/2024 17:35:33] "[36mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2024-10-22 17:35:59,204 INFO: * Detected change in 'C:\\Users\\user\\Documents\\Internship-work\\bnbproject\\app.py', reloading
+2024-10-22 17:35:59,494 INFO: * Restarting with stat
+2024-10-22 17:36:00,549 WARNING: * Debugger is active!
+2024-10-22 17:36:00,552 INFO: * Debugger PIN: 674-935-546
+2024-10-22 17:36:09,612 INFO:127.0.0.1 - - [22/Oct/2024 17:36:09] "[32mGET / HTTP/1.1[0m" 302 -
+2024-10-22 17:36:09,714 INFO:127.0.0.1 - - [22/Oct/2024 17:36:09] "GET /login?next=/ HTTP/1.1" 200 -
+2024-10-22 17:36:10,023 INFO:127.0.0.1 - - [22/Oct/2024 17:36:10] "[32mGET /favicon.ico HTTP/1.1[0m" 302 -
+2024-10-22 17:36:10,334 INFO:127.0.0.1 - - [22/Oct/2024 17:36:10] "GET /login?next=/favicon.ico HTTP/1.1" 200 -
+2024-10-22 17:36:24,708 INFO:127.0.0.1 - - [22/Oct/2024 17:36:24] "[31m[1mPOST /login HTTP/1.1[0m" 401 -
+2024-10-22 17:39:19,234 INFO:127.0.0.1 - - [22/Oct/2024 17:39:19] "POST /login HTTP/1.1" 200 -
+2024-10-22 17:39:19,528 INFO:127.0.0.1 - - [22/Oct/2024 17:39:19] "GET / HTTP/1.1" 200 -
+2024-10-22 17:39:19,832 INFO:127.0.0.1 - - [22/Oct/2024 17:39:19] "GET /favicon.ico HTTP/1.1" 200 -
+2024-10-22 17:41:58,815 INFO: * Detected change in 'C:\\Users\\user\\Documents\\Internship-work\\bnbproject\\app.py', reloading
+2024-10-22 17:41:59,164 INFO: * Restarting with stat
+2024-10-22 17:42:00,190 WARNING: * Debugger is active!
+2024-10-22 17:42:00,193 INFO: * Debugger PIN: 674-935-546
+2024-10-22 17:48:23,215 INFO:127.0.0.1 - - [22/Oct/2024 17:48:23] "GET /listings_page HTTP/1.1" 200 -
+2024-10-22 17:48:23,631 INFO:127.0.0.1 - - [22/Oct/2024 17:48:23] "GET /listings HTTP/1.1" 200 -
+2024-10-22 17:48:23,999 INFO:127.0.0.1 - - [22/Oct/2024 17:48:23] "GET /favicon.ico HTTP/1.1" 200 -
+2024-10-22 17:48:25,242 INFO:127.0.0.1 - - [22/Oct/2024 17:48:25] "GET /calendar HTTP/1.1" 200 -
+2024-10-22 17:48:25,557 INFO:127.0.0.1 - - [22/Oct/2024 17:48:25] "GET /api/bookings_detail?start=2024-09-29&end=2024-11-10&_=1729599505453 HTTP/1.1" 200 -
+2024-10-22 17:48:25,898 INFO:127.0.0.1 - - [22/Oct/2024 17:48:25] "GET /favicon.ico HTTP/1.1" 200 -
+2024-10-22 17:48:25,913 INFO:127.0.0.1 - - [22/Oct/2024 17:48:25] "GET /api/bookings_summary HTTP/1.1" 200 -
+2024-10-22 17:48:44,190 INFO:127.0.0.1 - - [22/Oct/2024 17:48:44] "GET /Bookings HTTP/1.1" 200 -
+2024-10-22 17:48:44,502 INFO:127.0.0.1 - - [22/Oct/2024 17:48:44] "GET /earnings HTTP/1.1" 200 -
+2024-10-22 17:48:44,612 INFO:127.0.0.1 - - [22/Oct/2024 17:48:44] "GET /favicon.ico HTTP/1.1" 200 -
+2024-10-22 17:48:48,086 INFO:127.0.0.1 - - [22/Oct/2024 17:48:48] "GET /uploads HTTP/1.1" 200 -
+2024-10-22 17:48:48,320 INFO:127.0.0.1 - - [22/Oct/2024 17:48:48] "GET /favicon.ico HTTP/1.1" 200 -
+2024-10-22 17:48:50,429 INFO:127.0.0.1 - - [22/Oct/2024 17:48:50] "GET /earnings_page HTTP/1.1" 200 -
+2024-10-22 17:48:50,689 INFO:127.0.0.1 - - [22/Oct/2024 17:48:50] "GET /earnings HTTP/1.1" 200 -
+2024-10-22 17:48:50,855 INFO:127.0.0.1 - - [22/Oct/2024 17:48:50] "GET /favicon.ico HTTP/1.1" 200 -
+2024-10-22 17:48:59,383 INFO:127.0.0.1 - - [22/Oct/2024 17:48:59] "[32mGET /logout HTTP/1.1[0m" 302 -
+2024-10-22 17:48:59,638 INFO:127.0.0.1 - - [22/Oct/2024 17:48:59] "GET /login HTTP/1.1" 200 -
+2024-10-22 17:48:59,706 INFO:127.0.0.1 - - [22/Oct/2024 17:48:59] "[32mGET /favicon.ico HTTP/1.1[0m" 302 -
+2024-10-22 17:48:59,991 INFO:127.0.0.1 - - [22/Oct/2024 17:48:59] "GET /login?next=/favicon.ico HTTP/1.1" 200 -
+2024-10-22 17:49:08,586 INFO:127.0.0.1 - - [22/Oct/2024 17:49:08] "POST /login HTTP/1.1" 200 -
+2024-10-22 17:49:08,938 INFO:127.0.0.1 - - [22/Oct/2024 17:49:08] "GET / HTTP/1.1" 200 -
+2024-10-22 17:49:09,050 INFO:127.0.0.1 - - [22/Oct/2024 17:49:09] "GET /favicon.ico HTTP/1.1" 200 -
+2024-10-22 17:49:13,228 INFO:127.0.0.1 - - [22/Oct/2024 17:49:13] "GET /earnings_page HTTP/1.1" 200 -
+2024-10-22 17:49:13,544 INFO:127.0.0.1 - - [22/Oct/2024 17:49:13] "GET /earnings HTTP/1.1" 200 -
+2024-10-22 17:49:13,655 INFO:127.0.0.1 - - [22/Oct/2024 17:49:13] "GET /favicon.ico HTTP/1.1" 200 -
+2024-10-22 17:49:33,110 INFO:127.0.0.1 - - [22/Oct/2024 17:49:33] "GET /earnings_page HTTP/1.1" 200 -
+2024-10-22 17:49:33,359 INFO:127.0.0.1 - - [22/Oct/2024 17:49:33] "GET /earnings HTTP/1.1" 200 -
+2024-10-22 17:49:33,527 INFO:127.0.0.1 - - [22/Oct/2024 17:49:33] "GET /favicon.ico HTTP/1.1" 200 -
+2024-10-22 17:49:37,480 INFO:127.0.0.1 - - [22/Oct/2024 17:49:37] "GET /uploads HTTP/1.1" 200 -
+2024-10-22 17:49:37,811 INFO:127.0.0.1 - - [22/Oct/2024 17:49:37] "GET /favicon.ico HTTP/1.1" 200 -
+2024-10-22 17:49:47,652 INFO:127.0.0.1 - - [22/Oct/2024 17:49:47] "GET /listings_page HTTP/1.1" 200 -
+2024-10-22 17:49:47,772 INFO:127.0.0.1 - - [22/Oct/2024 17:49:47] "GET /listings HTTP/1.1" 200 -
+2024-10-22 17:49:47,980 INFO:127.0.0.1 - - [22/Oct/2024 17:49:47] "GET /favicon.ico HTTP/1.1" 200 -
+2024-10-22 17:50:12,669 INFO:127.0.0.1 - - [22/Oct/2024 17:50:12] "GET /Bookings HTTP/1.1" 200 -
+2024-10-22 17:50:12,958 INFO:127.0.0.1 - - [22/Oct/2024 17:50:12] "GET /earnings HTTP/1.1" 200 -
+2024-10-22 17:50:13,050 INFO:127.0.0.1 - - [22/Oct/2024 17:50:13] "GET /favicon.ico HTTP/1.1" 200 -
+2024-10-22 17:50:14,753 INFO:127.0.0.1 - - [22/Oct/2024 17:50:14] "GET /listings_page HTTP/1.1" 200 -
+2024-10-22 17:50:14,994 INFO:127.0.0.1 - - [22/Oct/2024 17:50:14] "GET /listings HTTP/1.1" 200 -
+2024-10-22 17:50:15,021 INFO:127.0.0.1 - - [22/Oct/2024 17:50:15] "GET /favicon.ico HTTP/1.1" 200 -
+2024-10-22 17:53:02,087 INFO:127.0.0.1 - - [22/Oct/2024 17:53:02] "[32mGET / HTTP/1.1[0m" 302 -
+2024-10-22 17:53:02,118 INFO:127.0.0.1 - - [22/Oct/2024 17:53:02] "GET /login?next=/ HTTP/1.1" 200 -
+2024-10-22 17:53:02,569 INFO:127.0.0.1 - - [22/Oct/2024 17:53:02] "[32mGET /favicon.ico HTTP/1.1[0m" 302 -
+2024-10-22 17:53:02,578 INFO:127.0.0.1 - - [22/Oct/2024 17:53:02] "GET /login?next=/favicon.ico HTTP/1.1" 200 -
+2024-10-22 17:53:14,632 INFO:127.0.0.1 - - [22/Oct/2024 17:53:14] "GET / HTTP/1.1" 200 -
+2024-10-22 17:53:14,735 INFO:127.0.0.1 - - [22/Oct/2024 17:53:14] "GET /favicon.ico HTTP/1.1" 200 -
+2024-10-22 17:53:16,479 INFO:127.0.0.1 - - [22/Oct/2024 17:53:16] "GET /calendar HTTP/1.1" 200 -
+2024-10-22 17:53:16,813 INFO:127.0.0.1 - - [22/Oct/2024 17:53:16] "GET /api/bookings_detail?start=2024-09-29&end=2024-11-10&_=1729599796543 HTTP/1.1" 200 -
+2024-10-22 17:53:16,922 INFO:127.0.0.1 - - [22/Oct/2024 17:53:16] "GET /favicon.ico HTTP/1.1" 200 -
+2024-10-22 17:53:16,939 INFO:127.0.0.1 - - [22/Oct/2024 17:53:16] "GET /api/bookings_summary HTTP/1.1" 200 -
+2024-10-22 17:53:20,724 INFO:127.0.0.1 - - [22/Oct/2024 17:53:20] "GET /listings_page HTTP/1.1" 200 -
+2024-10-22 17:53:20,791 INFO:127.0.0.1 - - [22/Oct/2024 17:53:20] "GET /listings HTTP/1.1" 200 -
+2024-10-22 17:53:21,119 INFO:127.0.0.1 - - [22/Oct/2024 17:53:21] "GET /favicon.ico HTTP/1.1" 200 -
+2024-10-22 17:53:22,721 INFO:127.0.0.1 - - [22/Oct/2024 17:53:22] "GET /Bookings HTTP/1.1" 200 -
+2024-10-22 17:53:23,035 INFO:127.0.0.1 - - [22/Oct/2024 17:53:23] "GET /favicon.ico HTTP/1.1" 200 -
+2024-10-22 17:53:23,036 INFO:127.0.0.1 - - [22/Oct/2024 17:53:23] "GET /earnings HTTP/1.1" 200 -
+2024-10-22 17:53:25,385 INFO:127.0.0.1 - - [22/Oct/2024 17:53:25] "GET /uploads HTTP/1.1" 200 -
+2024-10-22 17:53:25,714 INFO:127.0.0.1 - - [22/Oct/2024 17:53:25] "GET /favicon.ico HTTP/1.1" 200 -
+2024-10-22 17:53:26,861 INFO:127.0.0.1 - - [22/Oct/2024 17:53:26] "GET /earnings_page HTTP/1.1" 200 -
+2024-10-22 17:53:27,015 INFO:127.0.0.1 - - [22/Oct/2024 17:53:27] "GET /earnings HTTP/1.1" 200 -
+2024-10-22 17:53:27,418 INFO:127.0.0.1 - - [22/Oct/2024 17:53:27] "GET /favicon.ico HTTP/1.1" 200 -
+2024-10-22 17:53:30,235 INFO:127.0.0.1 - - [22/Oct/2024 17:53:30] "GET /calendar HTTP/1.1" 200 -
+2024-10-22 17:53:30,554 INFO:127.0.0.1 - - [22/Oct/2024 17:53:30] "GET /api/bookings_detail?start=2024-09-29&end=2024-11-10&_=1729599810325 HTTP/1.1" 200 -
+2024-10-22 17:53:30,563 INFO:127.0.0.1 - - [22/Oct/2024 17:53:30] "GET /api/bookings_summary HTTP/1.1" 200 -
+2024-10-22 17:53:30,674 INFO:127.0.0.1 - - [22/Oct/2024 17:53:30] "GET /favicon.ico HTTP/1.1" 200 -
+2024-10-22 17:53:38,057 INFO:127.0.0.1 - - [22/Oct/2024 17:53:38] "GET /listings_page HTTP/1.1" 200 -
+2024-10-22 17:53:38,395 INFO:127.0.0.1 - - [22/Oct/2024 17:53:38] "GET /favicon.ico HTTP/1.1" 200 -
+2024-10-22 17:53:38,399 INFO:127.0.0.1 - - [22/Oct/2024 17:53:38] "GET /listings HTTP/1.1" 200 -
+2024-10-22 17:53:38,700 INFO:127.0.0.1 - - [22/Oct/2024 17:53:38] "GET /Bookings HTTP/1.1" 200 -
+2024-10-22 17:53:39,034 INFO:127.0.0.1 - - [22/Oct/2024 17:53:39] "GET /favicon.ico HTTP/1.1" 200 -
+2024-10-22 17:53:39,039 INFO:127.0.0.1 - - [22/Oct/2024 17:53:39] "GET /earnings HTTP/1.1" 200 -
+2024-10-22 17:53:40,466 INFO:127.0.0.1 - - [22/Oct/2024 17:53:40] "GET /uploads HTTP/1.1" 200 -
+2024-10-22 17:53:40,791 INFO:127.0.0.1 - - [22/Oct/2024 17:53:40] "GET /favicon.ico HTTP/1.1" 200 -
+2024-10-22 17:53:41,382 INFO:127.0.0.1 - - [22/Oct/2024 17:53:41] "GET /earnings_page HTTP/1.1" 200 -
+2024-10-22 17:53:41,428 INFO:127.0.0.1 - - [22/Oct/2024 17:53:41] "GET /earnings HTTP/1.1" 200 -
+2024-10-22 17:53:41,748 INFO:127.0.0.1 - - [22/Oct/2024 17:53:41] "GET /favicon.ico HTTP/1.1" 200 -
+2024-10-22 18:44:28,501 INFO:127.0.0.1 - - [22/Oct/2024 18:44:28] "GET /uploads HTTP/1.1" 200 -
+2024-10-22 18:44:28,892 INFO:127.0.0.1 - - [22/Oct/2024 18:44:28] "GET /favicon.ico HTTP/1.1" 200 -
+2024-10-22 18:44:47,430 INFO:127.0.0.1 - - [22/Oct/2024 18:44:47] "GET /listings_page HTTP/1.1" 200 -
+2024-10-22 18:44:47,591 INFO:127.0.0.1 - - [22/Oct/2024 18:44:47] "GET /listings HTTP/1.1" 200 -
+2024-10-22 18:44:47,938 INFO:127.0.0.1 - - [22/Oct/2024 18:44:47] "GET /favicon.ico HTTP/1.1" 200 -
+2024-10-22 18:45:56,515 INFO:127.0.0.1 - - [22/Oct/2024 18:45:56] "GET /listings_page HTTP/1.1" 200 -
+2024-10-22 18:45:56,769 INFO:127.0.0.1 - - [22/Oct/2024 18:45:56] "GET /listings HTTP/1.1" 200 -
+2024-10-22 18:45:56,810 INFO:127.0.0.1 - - [22/Oct/2024 18:45:56] "GET /favicon.ico HTTP/1.1" 200 -
+2024-10-22 18:46:12,422 INFO:127.0.0.1 - - [22/Oct/2024 18:46:12] "GET /listings_page HTTP/1.1" 200 -
+2024-10-22 18:46:12,671 INFO:127.0.0.1 - - [22/Oct/2024 18:46:12] "GET /favicon.ico HTTP/1.1" 200 -
+2024-10-22 18:46:12,675 INFO:127.0.0.1 - - [22/Oct/2024 18:46:12] "GET /listings HTTP/1.1" 200 -
+2024-10-22 18:46:22,128 INFO:127.0.0.1 - - [22/Oct/2024 18:46:22] "GET /Bookings HTTP/1.1" 200 -
+2024-10-22 18:46:22,458 INFO:127.0.0.1 - - [22/Oct/2024 18:46:22] "GET /favicon.ico HTTP/1.1" 200 -
+2024-10-22 18:46:22,462 INFO:127.0.0.1 - - [22/Oct/2024 18:46:22] "GET /earnings HTTP/1.1" 200 -
+2024-10-22 18:46:26,766 INFO:127.0.0.1 - - [22/Oct/2024 18:46:26] "GET /listings_page HTTP/1.1" 200 -
+2024-10-22 18:46:27,092 INFO:127.0.0.1 - - [22/Oct/2024 18:46:27] "GET /favicon.ico HTTP/1.1" 200 -
+2024-10-22 18:46:27,096 INFO:127.0.0.1 - - [22/Oct/2024 18:46:27] "GET /listings HTTP/1.1" 200 -
+2024-10-22 18:46:43,846 INFO:127.0.0.1 - - [22/Oct/2024 18:46:43] "GET /calendar HTTP/1.1" 200 -
+2024-10-22 18:46:44,068 INFO:127.0.0.1 - - [22/Oct/2024 18:46:44] "GET /api/bookings_detail?start=2024-09-29&end=2024-11-10&_=1729603003937 HTTP/1.1" 200 -
+2024-10-22 18:46:44,310 INFO:127.0.0.1 - - [22/Oct/2024 18:46:44] "GET /api/bookings_summary HTTP/1.1" 200 -
+2024-10-22 18:46:44,312 INFO:127.0.0.1 - - [22/Oct/2024 18:46:44] "GET /favicon.ico HTTP/1.1" 200 -
+2024-10-22 18:46:48,247 INFO:127.0.0.1 - - [22/Oct/2024 18:46:48] "GET /listings_page HTTP/1.1" 200 -
+2024-10-22 18:46:48,483 INFO:127.0.0.1 - - [22/Oct/2024 18:46:48] "GET /favicon.ico HTTP/1.1" 200 -
+2024-10-22 18:46:48,485 INFO:127.0.0.1 - - [22/Oct/2024 18:46:48] "GET /listings HTTP/1.1" 200 -
+2024-10-22 18:51:29,693 INFO:127.0.0.1 - - [22/Oct/2024 18:51:29] "GET /calendar HTTP/1.1" 200 -
+2024-10-22 18:51:29,961 INFO:127.0.0.1 - - [22/Oct/2024 18:51:29] "GET /api/bookings_detail?start=2024-09-29&end=2024-11-10&_=1729603289770 HTTP/1.1" 200 -
+2024-10-22 18:51:30,147 INFO:127.0.0.1 - - [22/Oct/2024 18:51:30] "GET /api/bookings_summary HTTP/1.1" 200 -
+2024-10-22 18:51:30,149 INFO:127.0.0.1 - - [22/Oct/2024 18:51:30] "GET /favicon.ico HTTP/1.1" 200 -
+2024-10-22 18:51:31,834 INFO:127.0.0.1 - - [22/Oct/2024 18:51:31] "GET /listings_page HTTP/1.1" 200 -
+2024-10-22 18:51:32,163 INFO:127.0.0.1 - - [22/Oct/2024 18:51:32] "GET /favicon.ico HTTP/1.1" 200 -
+2024-10-22 18:51:32,164 INFO:127.0.0.1 - - [22/Oct/2024 18:51:32] "GET /listings HTTP/1.1" 200 -
+2024-10-22 18:56:04,294 INFO:127.0.0.1 - - [22/Oct/2024 18:56:04] "GET / HTTP/1.1" 200 -
+2024-10-22 18:56:04,386 INFO:127.0.0.1 - - [22/Oct/2024 18:56:04] "GET /favicon.ico HTTP/1.1" 200 -
+2024-10-22 18:56:16,020 INFO:127.0.0.1 - - [22/Oct/2024 18:56:16] "GET /calendar HTTP/1.1" 200 -
+2024-10-22 18:56:16,329 INFO:127.0.0.1 - - [22/Oct/2024 18:56:16] "GET /api/bookings_detail?start=2024-09-29&end=2024-11-10&_=1729603576111 HTTP/1.1" 200 -
+2024-10-22 18:56:16,507 INFO:127.0.0.1 - - [22/Oct/2024 18:56:16] "GET /favicon.ico HTTP/1.1" 200 -
+2024-10-22 18:56:16,532 INFO:127.0.0.1 - - [22/Oct/2024 18:56:16] "GET /api/bookings_summary HTTP/1.1" 200 -
+2024-10-22 18:56:25,379 INFO:127.0.0.1 - - [22/Oct/2024 18:56:25] "GET /api/bookings_detail?start=2024-09-01&end=2024-10-13&_=1729603576112 HTTP/1.1" 200 -
+2024-10-22 18:56:26,801 INFO:127.0.0.1 - - [22/Oct/2024 18:56:26] "GET /api/bookings_detail?start=2024-07-28&end=2024-09-08&_=1729603576113 HTTP/1.1" 200 -
+2024-10-22 18:56:28,442 INFO:127.0.0.1 - - [22/Oct/2024 18:56:28] "GET /api/bookings_detail?start=2024-09-01&end=2024-10-13&_=1729603576114 HTTP/1.1" 200 -
+2024-10-22 18:56:28,646 INFO:127.0.0.1 - - [22/Oct/2024 18:56:28] "GET /api/bookings_detail?start=2024-09-29&end=2024-11-10&_=1729603576115 HTTP/1.1" 200 -
+2024-10-22 18:56:29,164 INFO:127.0.0.1 - - [22/Oct/2024 18:56:29] "GET /api/bookings_detail?start=2024-10-27&end=2024-12-08&_=1729603576116 HTTP/1.1" 200 -
+2024-10-22 18:56:35,178 INFO:127.0.0.1 - - [22/Oct/2024 18:56:35] "GET /listings_page HTTP/1.1" 200 -
+2024-10-22 18:56:35,415 INFO:127.0.0.1 - - [22/Oct/2024 18:56:35] "GET /listings HTTP/1.1" 200 -
+2024-10-22 18:56:35,568 INFO:127.0.0.1 - - [22/Oct/2024 18:56:35] "GET /favicon.ico HTTP/1.1" 200 -
+2024-10-22 19:04:42,209 INFO:127.0.0.1 - - [22/Oct/2024 19:04:42] "GET /listings_page HTTP/1.1" 200 -
+2024-10-22 19:04:42,324 INFO:127.0.0.1 - - [22/Oct/2024 19:04:42] "GET /listings HTTP/1.1" 200 -
+2024-10-22 19:04:42,422 INFO:127.0.0.1 - - [22/Oct/2024 19:04:42] "GET /favicon.ico HTTP/1.1" 200 -
+2024-10-22 19:09:31,531 INFO: * Detected change in 'C:\\Users\\user\\Documents\\Internship-work\\bnbproject\\app.py', reloading
+2024-10-22 19:09:32,249 INFO: * Restarting with stat
+2024-10-22 19:09:35,263 WARNING: * Debugger is active!
+2024-10-22 19:09:35,267 INFO: * Debugger PIN: 674-935-546
+2024-10-22 19:09:36,511 INFO:127.0.0.1 - - [22/Oct/2024 19:09:36] "GET /earnings_page HTTP/1.1" 200 -
+2024-10-22 19:09:36,712 INFO:127.0.0.1 - - [22/Oct/2024 19:09:36] "GET /earnings HTTP/1.1" 200 -
+2024-10-22 19:09:36,951 INFO:127.0.0.1 - - [22/Oct/2024 19:09:36] "GET /favicon.ico HTTP/1.1" 200 -
+2024-10-22 19:12:03,582 INFO:127.0.0.1 - - [22/Oct/2024 19:12:03] "GET /listings_page HTTP/1.1" 200 -
+2024-10-22 19:12:03,843 INFO:127.0.0.1 - - [22/Oct/2024 19:12:03] "GET /listings HTTP/1.1" 200 -
+2024-10-22 19:12:03,951 INFO:127.0.0.1 - - [22/Oct/2024 19:12:03] "GET /favicon.ico HTTP/1.1" 200 -
+2024-10-22 22:45:54,812 INFO: * Detected change in 'C:\\Users\\user\\Documents\\Internship-work\\bnbproject\\app.py', reloading
+2024-10-22 22:45:55,597 INFO: * Restarting with stat
+2024-10-22 22:45:58,062 WARNING: * Debugger is active!
+2024-10-22 22:45:58,067 INFO: * Debugger PIN: 674-935-546
+2024-10-22 22:50:31,069 INFO:127.0.0.1 - - [22/Oct/2024 22:50:31] "[32mGET /listings/2 HTTP/1.1[0m" 302 -
+2024-10-22 22:50:31,297 INFO:127.0.0.1 - - [22/Oct/2024 22:50:31] "GET /login?next=/listings/2 HTTP/1.1" 200 -
+2024-10-22 22:50:36,825 INFO:127.0.0.1 - - [22/Oct/2024 22:50:36] "[32mGET /listings/2 HTTP/1.1[0m" 302 -
+2024-10-22 22:50:37,149 INFO:127.0.0.1 - - [22/Oct/2024 22:50:37] "GET /login?next=/listings/2 HTTP/1.1" 200 -
+2024-10-22 22:50:37,413 INFO:127.0.0.1 - - [22/Oct/2024 22:50:37] "[32mGET /listings/2 HTTP/1.1[0m" 302 -
+2024-10-22 22:50:37,570 INFO:127.0.0.1 - - [22/Oct/2024 22:50:37] "GET /login?next=/listings/2 HTTP/1.1" 200 -
+2024-10-22 22:50:37,726 INFO:127.0.0.1 - - [22/Oct/2024 22:50:37] "[32mGET /listings/2 HTTP/1.1[0m" 302 -
+2024-10-22 22:50:37,758 INFO:127.0.0.1 - - [22/Oct/2024 22:50:37] "GET /login?next=/listings/2 HTTP/1.1" 200 -
+2024-10-22 22:50:45,769 INFO:127.0.0.1 - - [22/Oct/2024 22:50:45] "[32mGET /listings/9 HTTP/1.1[0m" 302 -
+2024-10-22 22:50:46,083 INFO:127.0.0.1 - - [22/Oct/2024 22:50:46] "GET /login?next=/listings/9 HTTP/1.1" 200 -
+2024-10-22 23:01:31,505 INFO:127.0.0.1 - - [22/Oct/2024 23:01:31] "[32mPOST /listings HTTP/1.1[0m" 302 -
+2024-10-22 23:01:31,752 INFO:127.0.0.1 - - [22/Oct/2024 23:01:31] "GET /login?next=/listings HTTP/1.1" 200 -
+2024-10-22 23:01:34,198 INFO:127.0.0.1 - - [22/Oct/2024 23:01:34] "[32mPOST /listings HTTP/1.1[0m" 302 -
+2024-10-22 23:01:34,512 INFO:127.0.0.1 - - [22/Oct/2024 23:01:34] "GET /login?next=/listings HTTP/1.1" 200 -
+2024-10-22 23:01:39,748 INFO:127.0.0.1 - - [22/Oct/2024 23:01:39] "[32mPOST /listings HTTP/1.1[0m" 302 -
+2024-10-22 23:01:40,073 INFO:127.0.0.1 - - [22/Oct/2024 23:01:40] "GET /login?next=/listings HTTP/1.1" 200 -
+2024-10-22 23:01:40,260 INFO:127.0.0.1 - - [22/Oct/2024 23:01:40] "[32mPOST /listings HTTP/1.1[0m" 302 -
+2024-10-22 23:01:40,322 INFO:127.0.0.1 - - [22/Oct/2024 23:01:40] "[32mPOST /listings HTTP/1.1[0m" 302 -
+2024-10-22 23:01:40,431 INFO:127.0.0.1 - - [22/Oct/2024 23:01:40] "GET /login?next=/listings HTTP/1.1" 200 -
+2024-10-22 23:01:40,574 INFO:127.0.0.1 - - [22/Oct/2024 23:01:40] "GET /login?next=/listings HTTP/1.1" 200 -
+2024-10-22 23:01:42,414 INFO:127.0.0.1 - - [22/Oct/2024 23:01:42] "[32mPOST /listings HTTP/1.1[0m" 302 -
+2024-10-22 23:01:42,727 INFO:127.0.0.1 - - [22/Oct/2024 23:01:42] "GET /login?next=/listings HTTP/1.1" 200 -
+2024-10-22 23:01:48,709 INFO:127.0.0.1 - - [22/Oct/2024 23:01:48] "[32mPOST /listings HTTP/1.1[0m" 302 -
+2024-10-22 23:01:49,024 INFO:127.0.0.1 - - [22/Oct/2024 23:01:49] "GET /login?next=/listings HTTP/1.1" 200 -
+2024-10-22 23:01:49,181 INFO:127.0.0.1 - - [22/Oct/2024 23:01:49] "[32mPOST /listings HTTP/1.1[0m" 302 -
+2024-10-22 23:01:49,283 INFO:127.0.0.1 - - [22/Oct/2024 23:01:49] "[32mPOST /listings HTTP/1.1[0m" 302 -
+2024-10-22 23:01:49,369 INFO:127.0.0.1 - - [22/Oct/2024 23:01:49] "GET /login?next=/listings HTTP/1.1" 200 -
+2024-10-22 23:01:49,492 INFO:127.0.0.1 - - [22/Oct/2024 23:01:49] "[32mPOST /listings HTTP/1.1[0m" 302 -
+2024-10-22 23:01:49,586 INFO:127.0.0.1 - - [22/Oct/2024 23:01:49] "GET /login?next=/listings HTTP/1.1" 200 -
+2024-10-22 23:01:49,680 INFO:127.0.0.1 - - [22/Oct/2024 23:01:49] "GET /login?next=/listings HTTP/1.1" 200 -
+2024-10-22 23:01:50,406 INFO:127.0.0.1 - - [22/Oct/2024 23:01:50] "[32mPOST /listings HTTP/1.1[0m" 302 -
+2024-10-22 23:01:50,724 INFO:127.0.0.1 - - [22/Oct/2024 23:01:50] "GET /login?next=/listings HTTP/1.1" 200 -
+2024-10-22 23:01:50,987 INFO:127.0.0.1 - - [22/Oct/2024 23:01:50] "[32mPOST /listings HTTP/1.1[0m" 302 -
+2024-10-22 23:01:51,018 INFO:127.0.0.1 - - [22/Oct/2024 23:01:51] "GET /login?next=/listings HTTP/1.1" 200 -
+2024-10-22 23:02:07,799 INFO:127.0.0.1 - - [22/Oct/2024 23:02:07] "[32mPOST /listings HTTP/1.1[0m" 302 -
+2024-10-22 23:02:08,114 INFO:127.0.0.1 - - [22/Oct/2024 23:02:08] "GET /login?next=/listings HTTP/1.1" 200 -
+2024-10-22 23:02:08,318 INFO:127.0.0.1 - - [22/Oct/2024 23:02:08] "[32mPOST /listings HTTP/1.1[0m" 302 -
+2024-10-22 23:02:08,381 INFO:127.0.0.1 - - [22/Oct/2024 23:02:08] "GET /login?next=/listings HTTP/1.1" 200 -
+2024-10-22 23:02:20,372 INFO:127.0.0.1 - - [22/Oct/2024 23:02:20] "[32mGET /calendar HTTP/1.1[0m" 302 -
+2024-10-22 23:02:20,712 INFO:127.0.0.1 - - [22/Oct/2024 23:02:20] "GET /login?next=/calendar HTTP/1.1" 200 -
+2024-10-22 23:02:21,117 INFO:127.0.0.1 - - [22/Oct/2024 23:02:21] "[32mGET /favicon.ico HTTP/1.1[0m" 302 -
+2024-10-22 23:02:21,121 INFO:127.0.0.1 - - [22/Oct/2024 23:02:21] "GET /login?next=/favicon.ico HTTP/1.1" 200 -
+2024-10-22 23:02:32,523 INFO:127.0.0.1 - - [22/Oct/2024 23:02:32] "POST /login HTTP/1.1" 200 -
+2024-10-22 23:02:32,844 INFO:127.0.0.1 - - [22/Oct/2024 23:02:32] "GET / HTTP/1.1" 200 -
+2024-10-22 23:02:33,092 INFO:127.0.0.1 - - [22/Oct/2024 23:02:33] "GET /favicon.ico HTTP/1.1" 200 -
+2024-10-22 23:02:48,206 INFO:127.0.0.1 - - [22/Oct/2024 23:02:48] "GET /Bookings HTTP/1.1" 200 -
+2024-10-22 23:02:48,537 INFO:127.0.0.1 - - [22/Oct/2024 23:02:48] "GET /earnings HTTP/1.1" 200 -
+2024-10-22 23:02:48,681 INFO:127.0.0.1 - - [22/Oct/2024 23:02:48] "GET /favicon.ico HTTP/1.1" 200 -
+2024-10-22 23:04:24,698 INFO:127.0.0.1 - - [22/Oct/2024 23:04:24] "GET /earnings/59 HTTP/1.1" 200 -
+2024-10-22 23:05:04,936 INFO:127.0.0.1 - - [22/Oct/2024 23:05:04] "GET /earnings/59 HTTP/1.1" 200 -
+2024-10-22 23:05:10,938 INFO:127.0.0.1 - - [22/Oct/2024 23:05:10] "GET /calendar HTTP/1.1" 200 -
+2024-10-22 23:05:11,223 INFO:127.0.0.1 - - [22/Oct/2024 23:05:11] "GET /api/bookings_summary HTTP/1.1" 200 -
+2024-10-22 23:05:11,283 INFO:127.0.0.1 - - [22/Oct/2024 23:05:11] "GET /api/bookings_detail?start=2024-09-29&end=2024-11-10&_=1729618511065 HTTP/1.1" 200 -
+2024-10-22 23:05:11,464 INFO:127.0.0.1 - - [22/Oct/2024 23:05:11] "GET /favicon.ico HTTP/1.1" 200 -
+2024-10-22 23:06:18,550 INFO:127.0.0.1 - - [22/Oct/2024 23:06:18] "GET /listings_page HTTP/1.1" 200 -
+2024-10-22 23:06:18,772 INFO:127.0.0.1 - - [22/Oct/2024 23:06:18] "GET /listings HTTP/1.1" 200 -
+2024-10-22 23:06:19,008 INFO:127.0.0.1 - - [22/Oct/2024 23:06:19] "GET /favicon.ico HTTP/1.1" 200 -
+2024-10-22 23:06:21,335 INFO:127.0.0.1 - - [22/Oct/2024 23:06:21] "GET /calendar HTTP/1.1" 200 -
+2024-10-22 23:06:21,843 INFO:127.0.0.1 - - [22/Oct/2024 23:06:21] "GET /favicon.ico HTTP/1.1" 200 -
+2024-10-22 23:06:21,937 INFO:127.0.0.1 - - [22/Oct/2024 23:06:21] "GET /api/bookings_summary HTTP/1.1" 200 -
+2024-10-22 23:06:21,958 INFO:127.0.0.1 - - [22/Oct/2024 23:06:21] "GET /api/bookings_detail?start=2024-09-29&end=2024-11-10&_=1729618581441 HTTP/1.1" 200 -
+2024-10-22 23:06:28,047 INFO:127.0.0.1 - - [22/Oct/2024 23:06:28] "GET /Bookings HTTP/1.1" 200 -
+2024-10-22 23:06:28,314 INFO:127.0.0.1 - - [22/Oct/2024 23:06:28] "GET /earnings HTTP/1.1" 200 -
+2024-10-22 23:06:28,492 INFO:127.0.0.1 - - [22/Oct/2024 23:06:28] "GET /favicon.ico HTTP/1.1" 200 -
+2024-10-22 23:07:28,843 INFO:127.0.0.1 - - [22/Oct/2024 23:07:28] "GET /earnings/59 HTTP/1.1" 200 -
+2024-10-22 23:07:41,240 INFO:127.0.0.1 - - [22/Oct/2024 23:07:41] "GET /listings_page HTTP/1.1" 200 -
+2024-10-22 23:07:41,565 INFO:127.0.0.1 - - [22/Oct/2024 23:07:41] "GET /favicon.ico HTTP/1.1" 200 -
+2024-10-22 23:07:41,573 INFO:127.0.0.1 - - [22/Oct/2024 23:07:41] "GET /listings HTTP/1.1" 200 -
+2024-10-22 23:07:53,422 INFO:127.0.0.1 - - [22/Oct/2024 23:07:53] "GET /calendar HTTP/1.1" 200 -
+2024-10-22 23:07:53,773 INFO:127.0.0.1 - - [22/Oct/2024 23:07:53] "GET /api/bookings_detail?start=2024-09-29&end=2024-11-10&_=1729618673536 HTTP/1.1" 200 -
+2024-10-22 23:07:54,025 INFO:127.0.0.1 - - [22/Oct/2024 23:07:54] "GET /favicon.ico HTTP/1.1" 200 -
+2024-10-22 23:07:54,110 INFO:127.0.0.1 - - [22/Oct/2024 23:07:54] "GET /api/bookings_summary HTTP/1.1" 200 -
+2024-10-22 23:07:55,836 INFO:127.0.0.1 - - [22/Oct/2024 23:07:55] "GET /listings_page HTTP/1.1" 200 -
+2024-10-22 23:07:56,111 INFO:127.0.0.1 - - [22/Oct/2024 23:07:56] "GET /listings HTTP/1.1" 200 -
+2024-10-22 23:07:56,242 INFO:127.0.0.1 - - [22/Oct/2024 23:07:56] "GET /favicon.ico HTTP/1.1" 200 -
+2024-10-22 23:08:04,430 INFO:127.0.0.1 - - [22/Oct/2024 23:08:04] "GET /Bookings HTTP/1.1" 200 -
+2024-10-22 23:08:04,759 INFO:127.0.0.1 - - [22/Oct/2024 23:08:04] "GET /favicon.ico HTTP/1.1" 200 -
+2024-10-22 23:08:04,764 INFO:127.0.0.1 - - [22/Oct/2024 23:08:04] "GET /earnings HTTP/1.1" 200 -
+2024-10-22 23:08:24,483 INFO:127.0.0.1 - - [22/Oct/2024 23:08:24] "GET /calendar HTTP/1.1" 200 -
+2024-10-22 23:08:24,864 INFO:127.0.0.1 - - [22/Oct/2024 23:08:24] "GET /api/bookings_detail?start=2024-09-29&end=2024-11-10&_=1729618704586 HTTP/1.1" 200 -
+2024-10-22 23:08:24,973 INFO:127.0.0.1 - - [22/Oct/2024 23:08:24] "GET /favicon.ico HTTP/1.1" 200 -
+2024-10-22 23:08:25,006 INFO:127.0.0.1 - - [22/Oct/2024 23:08:25] "GET /api/bookings_summary HTTP/1.1" 200 -
+2024-10-22 23:10:14,806 INFO:127.0.0.1 - - [22/Oct/2024 23:10:14] "GET /Bookings HTTP/1.1" 200 -
+2024-10-22 23:10:15,073 INFO:127.0.0.1 - - [22/Oct/2024 23:10:15] "GET /earnings HTTP/1.1" 200 -
+2024-10-22 23:10:15,293 INFO:127.0.0.1 - - [22/Oct/2024 23:10:15] "GET /favicon.ico HTTP/1.1" 200 -
+2024-10-22 23:10:44,859 INFO:127.0.0.1 - - [22/Oct/2024 23:10:44] "GET /listings_page HTTP/1.1" 200 -
+2024-10-22 23:10:45,116 INFO:127.0.0.1 - - [22/Oct/2024 23:10:45] "GET /listings HTTP/1.1" 200 -
+2024-10-22 23:10:45,271 INFO:127.0.0.1 - - [22/Oct/2024 23:10:45] "GET /favicon.ico HTTP/1.1" 200 -
+2024-10-22 23:12:10,810 INFO:127.0.0.1 - - [22/Oct/2024 23:12:10] "GET /Bookings HTTP/1.1" 200 -
+2024-10-22 23:12:11,060 INFO:127.0.0.1 - - [22/Oct/2024 23:12:11] "GET /earnings HTTP/1.1" 200 -
+2024-10-22 23:12:11,242 INFO:127.0.0.1 - - [22/Oct/2024 23:12:11] "GET /favicon.ico HTTP/1.1" 200 -
+2024-10-22 23:12:46,249 INFO:127.0.0.1 - - [22/Oct/2024 23:12:46] "GET /listings_page HTTP/1.1" 200 -
+2024-10-22 23:12:46,574 INFO:127.0.0.1 - - [22/Oct/2024 23:12:46] "GET /listings HTTP/1.1" 200 -
+2024-10-22 23:12:46,684 INFO:127.0.0.1 - - [22/Oct/2024 23:12:46] "GET /favicon.ico HTTP/1.1" 200 -
+2024-10-22 23:12:57,925 INFO:127.0.0.1 - - [22/Oct/2024 23:12:57] "GET /Bookings HTTP/1.1" 200 -
+2024-10-22 23:12:58,175 INFO:127.0.0.1 - - [22/Oct/2024 23:12:58] "GET /favicon.ico HTTP/1.1" 200 -
+2024-10-22 23:12:58,183 INFO:127.0.0.1 - - [22/Oct/2024 23:12:58] "GET /earnings HTTP/1.1" 200 -
+2024-10-22 23:13:37,695 INFO:127.0.0.1 - - [22/Oct/2024 23:13:37] "GET /listings_page HTTP/1.1" 200 -
+2024-10-22 23:13:38,007 INFO:127.0.0.1 - - [22/Oct/2024 23:13:38] "GET /listings HTTP/1.1" 200 -
+2024-10-22 23:13:38,098 INFO:127.0.0.1 - - [22/Oct/2024 23:13:38] "GET /favicon.ico HTTP/1.1" 200 -
+2024-10-22 23:13:49,970 INFO:127.0.0.1 - - [22/Oct/2024 23:13:49] "GET /Bookings HTTP/1.1" 200 -
+2024-10-22 23:13:50,218 INFO:127.0.0.1 - - [22/Oct/2024 23:13:50] "GET /earnings HTTP/1.1" 200 -
+2024-10-22 23:13:50,219 INFO:127.0.0.1 - - [22/Oct/2024 23:13:50] "GET /favicon.ico HTTP/1.1" 200 -
+2024-10-22 23:13:59,433 INFO:127.0.0.1 - - [22/Oct/2024 23:13:59] "GET /listings_page HTTP/1.1" 200 -
+2024-10-22 23:13:59,753 INFO:127.0.0.1 - - [22/Oct/2024 23:13:59] "GET /listings HTTP/1.1" 200 -
+2024-10-22 23:13:59,895 INFO:127.0.0.1 - - [22/Oct/2024 23:13:59] "GET /favicon.ico HTTP/1.1" 200 -
+2024-10-22 23:14:05,130 INFO:127.0.0.1 - - [22/Oct/2024 23:14:05] "GET /Bookings HTTP/1.1" 200 -
+2024-10-22 23:14:05,411 INFO:127.0.0.1 - - [22/Oct/2024 23:14:05] "GET /earnings HTTP/1.1" 200 -
+2024-10-22 23:14:05,535 INFO:127.0.0.1 - - [22/Oct/2024 23:14:05] "GET /favicon.ico HTTP/1.1" 200 -
+2024-10-22 23:18:46,528 INFO:127.0.0.1 - - [22/Oct/2024 23:18:46] "GET /uploads HTTP/1.1" 200 -
+2024-10-22 23:18:46,759 INFO:127.0.0.1 - - [22/Oct/2024 23:18:46] "GET /favicon.ico HTTP/1.1" 200 -
+2024-10-22 23:18:48,407 INFO:127.0.0.1 - - [22/Oct/2024 23:18:48] "GET /listings_page HTTP/1.1" 200 -
+2024-10-22 23:18:48,719 INFO:127.0.0.1 - - [22/Oct/2024 23:18:48] "GET /listings HTTP/1.1" 200 -
+2024-10-22 23:18:48,776 INFO:127.0.0.1 - - [22/Oct/2024 23:18:48] "GET /favicon.ico HTTP/1.1" 200 -
+2024-10-22 23:20:16,771 INFO:127.0.0.1 - - [22/Oct/2024 23:20:16] "GET /listings_page HTTP/1.1" 200 -
+2024-10-22 23:20:17,031 INFO:127.0.0.1 - - [22/Oct/2024 23:20:17] "GET /listings HTTP/1.1" 200 -
+2024-10-22 23:20:17,233 INFO:127.0.0.1 - - [22/Oct/2024 23:20:17] "GET /favicon.ico HTTP/1.1" 200 -
+2024-10-22 23:20:28,651 INFO:127.0.0.1 - - [22/Oct/2024 23:20:28] "GET /listings_page HTTP/1.1" 200 -
+2024-10-22 23:20:28,980 INFO:127.0.0.1 - - [22/Oct/2024 23:20:28] "GET /favicon.ico HTTP/1.1" 200 -
+2024-10-22 23:20:28,992 INFO:127.0.0.1 - - [22/Oct/2024 23:20:28] "GET /listings HTTP/1.1" 200 -
+2024-10-22 23:20:31,136 INFO:127.0.0.1 - - [22/Oct/2024 23:20:31] "GET /Bookings HTTP/1.1" 200 -
+2024-10-22 23:20:31,462 INFO:127.0.0.1 - - [22/Oct/2024 23:20:31] "GET /favicon.ico HTTP/1.1" 200 -
+2024-10-22 23:20:31,471 INFO:127.0.0.1 - - [22/Oct/2024 23:20:31] "GET /earnings HTTP/1.1" 200 -
+2024-10-22 23:20:32,850 INFO:127.0.0.1 - - [22/Oct/2024 23:20:32] "GET /listings_page HTTP/1.1" 200 -
+2024-10-22 23:20:33,164 INFO:127.0.0.1 - - [22/Oct/2024 23:20:33] "GET /listings HTTP/1.1" 200 -
+2024-10-22 23:20:33,334 INFO:127.0.0.1 - - [22/Oct/2024 23:20:33] "GET /favicon.ico HTTP/1.1" 200 -
+2024-10-22 23:22:12,576 INFO:127.0.0.1 - - [22/Oct/2024 23:22:12] "GET /Bookings HTTP/1.1" 200 -
+2024-10-22 23:22:12,638 INFO:127.0.0.1 - - [22/Oct/2024 23:22:12] "GET /earnings HTTP/1.1" 200 -
+2024-10-22 23:22:12,844 INFO:127.0.0.1 - - [22/Oct/2024 23:22:12] "GET /favicon.ico HTTP/1.1" 200 -
+2024-10-22 23:22:18,843 INFO:127.0.0.1 - - [22/Oct/2024 23:22:18] "GET /listings_page HTTP/1.1" 200 -
+2024-10-22 23:22:19,083 INFO:127.0.0.1 - - [22/Oct/2024 23:22:19] "GET /listings HTTP/1.1" 200 -
+2024-10-22 23:22:19,273 INFO:127.0.0.1 - - [22/Oct/2024 23:22:19] "GET /favicon.ico HTTP/1.1" 200 -
+2024-10-22 23:22:29,049 INFO:127.0.0.1 - - [22/Oct/2024 23:22:29] "GET /Bookings HTTP/1.1" 200 -
+2024-10-22 23:22:29,383 INFO:127.0.0.1 - - [22/Oct/2024 23:22:29] "GET /earnings HTTP/1.1" 200 -
+2024-10-22 23:22:29,521 INFO:127.0.0.1 - - [22/Oct/2024 23:22:29] "GET /favicon.ico HTTP/1.1" 200 -
+2024-10-22 23:24:25,214 INFO:127.0.0.1 - - [22/Oct/2024 23:24:25] "GET /earnings_page HTTP/1.1" 200 -
+2024-10-22 23:24:25,497 INFO:127.0.0.1 - - [22/Oct/2024 23:24:25] "GET /earnings HTTP/1.1" 200 -
+2024-10-22 23:24:25,576 INFO:127.0.0.1 - - [22/Oct/2024 23:24:25] "GET /favicon.ico HTTP/1.1" 200 -
+2024-10-22 23:25:03,941 INFO:127.0.0.1 - - [22/Oct/2024 23:25:03] "GET /Bookings HTTP/1.1" 200 -
+2024-10-22 23:25:04,211 INFO:127.0.0.1 - - [22/Oct/2024 23:25:04] "GET /earnings HTTP/1.1" 200 -
+2024-10-22 23:25:04,301 INFO:127.0.0.1 - - [22/Oct/2024 23:25:04] "GET /favicon.ico HTTP/1.1" 200 -
+2024-10-22 23:25:10,748 INFO:127.0.0.1 - - [22/Oct/2024 23:25:10] "GET /earnings_page HTTP/1.1" 200 -
+2024-10-22 23:25:11,053 INFO:127.0.0.1 - - [22/Oct/2024 23:25:11] "GET /earnings HTTP/1.1" 200 -
+2024-10-22 23:25:11,152 INFO:127.0.0.1 - - [22/Oct/2024 23:25:11] "GET /favicon.ico HTTP/1.1" 200 -
+2024-10-22 23:25:17,126 INFO:127.0.0.1 - - [22/Oct/2024 23:25:17] "GET /Bookings HTTP/1.1" 200 -
+2024-10-22 23:25:17,409 INFO:127.0.0.1 - - [22/Oct/2024 23:25:17] "GET /earnings HTTP/1.1" 200 -
+2024-10-22 23:25:17,559 INFO:127.0.0.1 - - [22/Oct/2024 23:25:17] "GET /favicon.ico HTTP/1.1" 200 -
+2024-10-23 15:26:38,071 INFO:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-10-23 15:26:38,071 INFO:[33mPress CTRL+C to quit[0m
+2024-10-23 15:27:02,165 INFO:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8000
+ * Running on http://192.168.1.143:8000
+2024-10-23 15:27:02,165 INFO:[33mPress CTRL+C to quit[0m
+2024-10-23 15:27:02,165 INFO: * Restarting with stat
+2024-10-23 15:27:03,677 WARNING: * Debugger is active!
+2024-10-23 15:27:03,677 INFO: * Debugger PIN: 674-935-546
+2024-10-23 15:27:04,979 INFO:127.0.0.1 - - [23/Oct/2024 15:27:04] "GET /calendar HTTP/1.1" 200 -
+2024-10-23 15:27:05,339 INFO:127.0.0.1 - - [23/Oct/2024 15:27:05] "GET /api/bookings_summary HTTP/1.1" 200 -
+2024-10-23 15:27:05,387 INFO:127.0.0.1 - - [23/Oct/2024 15:27:05] "GET /api/bookings_detail?start=2024-09-29&end=2024-11-10&_=1729677425176 HTTP/1.1" 200 -
+2024-10-23 15:27:05,579 INFO:127.0.0.1 - - [23/Oct/2024 15:27:05] "GET /favicon.ico HTTP/1.1" 200 -
+2024-10-23 15:27:36,189 INFO:127.0.0.1 - - [23/Oct/2024 15:27:36] "GET /calendar HTTP/1.1" 200 -
+2024-10-23 15:27:36,518 INFO:127.0.0.1 - - [23/Oct/2024 15:27:36] "GET /api/bookings_summary HTTP/1.1" 200 -
+2024-10-23 15:27:36,678 INFO:127.0.0.1 - - [23/Oct/2024 15:27:36] "GET /favicon.ico HTTP/1.1" 200 -
+2024-10-23 15:27:36,686 INFO:127.0.0.1 - - [23/Oct/2024 15:27:36] "GET /api/bookings_detail?start=2024-09-29&end=2024-11-10&_=1729677456301 HTTP/1.1" 200 -
+2024-10-23 15:27:54,507 INFO:127.0.0.1 - - [23/Oct/2024 15:27:54] "GET /calendar HTTP/1.1" 200 -
+2024-10-23 15:27:55,018 INFO:127.0.0.1 - - [23/Oct/2024 15:27:55] "GET /favicon.ico HTTP/1.1" 200 -
+2024-10-23 15:27:55,202 INFO:127.0.0.1 - - [23/Oct/2024 15:27:55] "GET /api/bookings_summary HTTP/1.1" 200 -
+2024-10-23 15:27:55,218 INFO:127.0.0.1 - - [23/Oct/2024 15:27:55] "GET /api/bookings_detail?start=2024-09-29&end=2024-11-10&_=1729677474611 HTTP/1.1" 200 -
+2024-10-23 15:27:58,446 INFO:127.0.0.1 - - [23/Oct/2024 15:27:58] "GET /listings_page HTTP/1.1" 200 -
+2024-10-23 15:27:58,694 INFO:127.0.0.1 - - [23/Oct/2024 15:27:58] "GET /listings HTTP/1.1" 200 -
+2024-10-23 15:27:58,928 INFO:127.0.0.1 - - [23/Oct/2024 15:27:58] "GET /favicon.ico HTTP/1.1" 200 -
+2024-10-23 15:28:03,593 INFO:127.0.0.1 - - [23/Oct/2024 15:28:03] "GET /calendar HTTP/1.1" 200 -
+2024-10-23 15:28:04,131 INFO:127.0.0.1 - - [23/Oct/2024 15:28:04] "GET /favicon.ico HTTP/1.1" 200 -
+2024-10-23 15:28:04,179 INFO:127.0.0.1 - - [23/Oct/2024 15:28:04] "GET /api/bookings_summary HTTP/1.1" 200 -
+2024-10-23 15:28:04,179 INFO:127.0.0.1 - - [23/Oct/2024 15:28:04] "GET /api/bookings_detail?start=2024-09-29&end=2024-11-10&_=1729677483679 HTTP/1.1" 200 -
+2024-10-23 15:28:59,948 INFO:127.0.0.1 - - [23/Oct/2024 15:28:59] "GET /Bookings HTTP/1.1" 200 -
+2024-10-23 15:29:00,212 INFO:127.0.0.1 - - [23/Oct/2024 15:29:00] "GET /earnings HTTP/1.1" 200 -
+2024-10-23 15:29:00,396 INFO:127.0.0.1 - - [23/Oct/2024 15:29:00] "GET /favicon.ico HTTP/1.1" 200 -
+2024-10-23 15:29:23,933 INFO:127.0.0.1 - - [23/Oct/2024 15:29:23] "GET /earnings_page HTTP/1.1" 200 -
+2024-10-23 15:29:24,157 INFO:127.0.0.1 - - [23/Oct/2024 15:29:24] "GET /earnings HTTP/1.1" 200 -
+2024-10-23 15:29:24,326 INFO:127.0.0.1 - - [23/Oct/2024 15:29:24] "GET /favicon.ico HTTP/1.1" 200 -
+2024-10-23 15:31:00,540 INFO:127.0.0.1 - - [23/Oct/2024 15:31:00] "GET /uploads HTTP/1.1" 200 -
+2024-10-23 15:31:00,764 INFO:127.0.0.1 - - [23/Oct/2024 15:31:00] "GET /favicon.ico HTTP/1.1" 200 -
+2024-10-23 15:31:03,164 INFO:127.0.0.1 - - [23/Oct/2024 15:31:03] "GET /earnings_page HTTP/1.1" 200 -
+2024-10-23 15:31:03,452 INFO:127.0.0.1 - - [23/Oct/2024 15:31:03] "GET /earnings HTTP/1.1" 200 -
+2024-10-23 15:31:03,611 INFO:127.0.0.1 - - [23/Oct/2024 15:31:03] "GET /favicon.ico HTTP/1.1" 200 -
+2024-10-23 15:32:27,027 INFO:127.0.0.1 - - [23/Oct/2024 15:32:27] "GET /listings_page HTTP/1.1" 200 -
+2024-10-23 15:32:27,308 INFO:127.0.0.1 - - [23/Oct/2024 15:32:27] "GET /listings HTTP/1.1" 200 -
+2024-10-23 15:32:27,524 INFO:127.0.0.1 - - [23/Oct/2024 15:32:27] "GET /favicon.ico HTTP/1.1" 200 -
+2024-10-23 15:32:56,669 INFO:127.0.0.1 - - [23/Oct/2024 15:32:56] "GET /calendar HTTP/1.1" 200 -
+2024-10-23 15:32:56,989 INFO:127.0.0.1 - - [23/Oct/2024 15:32:56] "GET /api/bookings_detail?start=2024-09-29&end=2024-11-10&_=1729677776780 HTTP/1.1" 200 -
+2024-10-23 15:32:57,222 INFO:127.0.0.1 - - [23/Oct/2024 15:32:57] "GET /favicon.ico HTTP/1.1" 200 -
+2024-10-23 15:32:57,352 INFO:127.0.0.1 - - [23/Oct/2024 15:32:57] "GET /api/bookings_summary HTTP/1.1" 200 -
+2024-10-23 15:33:05,848 INFO:127.0.0.1 - - [23/Oct/2024 15:33:05] "GET /listings_page HTTP/1.1" 200 -
+2024-10-23 15:33:06,272 INFO:127.0.0.1 - - [23/Oct/2024 15:33:06] "GET /favicon.ico HTTP/1.1" 200 -
+2024-10-23 15:33:06,296 INFO:127.0.0.1 - - [23/Oct/2024 15:33:06] "GET /listings HTTP/1.1" 200 -
+2024-10-23 15:33:09,113 INFO:127.0.0.1 - - [23/Oct/2024 15:33:09] "GET /Bookings HTTP/1.1" 200 -
+2024-10-23 15:33:09,425 INFO:127.0.0.1 - - [23/Oct/2024 15:33:09] "GET /favicon.ico HTTP/1.1" 200 -
+2024-10-23 15:33:09,441 INFO:127.0.0.1 - - [23/Oct/2024 15:33:09] "GET /earnings HTTP/1.1" 200 -
+2024-10-23 15:33:17,307 INFO:127.0.0.1 - - [23/Oct/2024 15:33:17] "GET /earnings_page HTTP/1.1" 200 -
+2024-10-23 15:33:17,604 INFO:127.0.0.1 - - [23/Oct/2024 15:33:17] "GET /earnings HTTP/1.1" 200 -
+2024-10-23 15:33:17,780 INFO:127.0.0.1 - - [23/Oct/2024 15:33:17] "GET /favicon.ico HTTP/1.1" 200 -
+2024-10-23 15:33:19,569 INFO:127.0.0.1 - - [23/Oct/2024 15:33:19] "GET /Bookings HTTP/1.1" 200 -
+2024-10-23 15:33:19,877 INFO:127.0.0.1 - - [23/Oct/2024 15:33:19] "GET /earnings HTTP/1.1" 200 -
+2024-10-23 15:33:20,091 INFO:127.0.0.1 - - [23/Oct/2024 15:33:20] "GET /favicon.ico HTTP/1.1" 200 -
+2024-10-23 15:33:22,024 INFO:127.0.0.1 - - [23/Oct/2024 15:33:22] "GET /earnings_page HTTP/1.1" 200 -
+2024-10-23 15:33:22,305 INFO:127.0.0.1 - - [23/Oct/2024 15:33:22] "GET /earnings HTTP/1.1" 200 -
+2024-10-23 15:33:22,417 INFO:127.0.0.1 - - [23/Oct/2024 15:33:22] "GET /favicon.ico HTTP/1.1" 200 -
+2024-10-23 15:33:23,452 INFO:127.0.0.1 - - [23/Oct/2024 15:33:23] "GET /Bookings HTTP/1.1" 200 -
+2024-10-23 15:33:23,772 INFO:127.0.0.1 - - [23/Oct/2024 15:33:23] "GET /earnings HTTP/1.1" 200 -
+2024-10-23 15:33:23,844 INFO:127.0.0.1 - - [23/Oct/2024 15:33:23] "GET /favicon.ico HTTP/1.1" 200 -
+2024-11-02 12:11:43,500 INFO:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-11-02 12:11:43,501 INFO:[33mPress CTRL+C to quit[0m
+2024-11-02 12:28:13,599 INFO:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8000
+ * Running on http://192.168.134.140:8000
+2024-11-02 12:28:13,599 INFO:[33mPress CTRL+C to quit[0m
+2024-11-02 12:28:13,601 INFO: * Restarting with stat
+2024-11-02 12:28:14,748 WARNING: * Debugger is active!
+2024-11-02 12:28:14,752 INFO: * Debugger PIN: 774-060-555
+2024-11-02 12:28:20,629 INFO:127.0.0.1 - - [02/Nov/2024 12:28:20] "[32mGET / HTTP/1.1[0m" 302 -
+2024-11-02 12:28:20,674 INFO:127.0.0.1 - - [02/Nov/2024 12:28:20] "GET /login?next=/ HTTP/1.1" 200 -
+2024-11-02 12:28:20,899 INFO:127.0.0.1 - - [02/Nov/2024 12:28:20] "[32mGET /favicon.ico HTTP/1.1[0m" 302 -
+2024-11-02 12:28:21,223 INFO:127.0.0.1 - - [02/Nov/2024 12:28:21] "GET /login?next=/favicon.ico HTTP/1.1" 200 -
+2024-11-04 10:40:24,397 INFO:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8000
+ * Running on http://192.168.90.140:8000
+2024-11-04 10:40:24,398 INFO:[33mPress CTRL+C to quit[0m
+2024-11-04 10:40:24,399 INFO: * Restarting with stat
+2024-11-04 10:40:25,373 WARNING: * Debugger is active!
+2024-11-04 10:40:25,375 INFO: * Debugger PIN: 131-490-941
+2024-11-04 10:40:44,129 INFO:127.0.0.1 - - [04/Nov/2024 10:40:44] "[32mGET /l HTTP/1.1[0m" 302 -
+2024-11-04 10:40:45,062 INFO:127.0.0.1 - - [04/Nov/2024 10:40:45] "GET /login?next=/l HTTP/1.1" 200 -
+2024-11-04 10:40:46,029 INFO:127.0.0.1 - - [04/Nov/2024 10:40:46] "[32mGET /favicon.ico HTTP/1.1[0m" 302 -
+2024-11-04 10:40:46,297 INFO:127.0.0.1 - - [04/Nov/2024 10:40:46] "GET /login?next=/favicon.ico HTTP/1.1" 200 -
+2024-11-04 10:40:53,219 INFO:127.0.0.1 - - [04/Nov/2024 10:40:53] "[32mGET / HTTP/1.1[0m" 302 -
+2024-11-04 10:40:53,541 INFO:127.0.0.1 - - [04/Nov/2024 10:40:53] "GET /login?next=/ HTTP/1.1" 200 -
+2024-11-04 10:40:53,798 INFO:127.0.0.1 - - [04/Nov/2024 10:40:53] "[32mGET /favicon.ico HTTP/1.1[0m" 302 -
+2024-11-04 10:40:53,986 INFO:127.0.0.1 - - [04/Nov/2024 10:40:53] "GET /login?next=/favicon.ico HTTP/1.1" 200 -
+2024-11-04 10:41:04,282 INFO:127.0.0.1 - - [04/Nov/2024 10:41:04] "POST /login HTTP/1.1" 200 -
+2024-11-04 10:41:04,644 INFO:127.0.0.1 - - [04/Nov/2024 10:41:04] "GET / HTTP/1.1" 200 -
+2024-11-04 10:41:05,122 INFO:127.0.0.1 - - [04/Nov/2024 10:41:05] "GET /favicon.ico HTTP/1.1" 200 -
+2024-11-04 10:41:08,290 INFO:127.0.0.1 - - [04/Nov/2024 10:41:08] "GET /calendar HTTP/1.1" 200 -
+2024-11-04 10:41:08,901 INFO:127.0.0.1 - - [04/Nov/2024 10:41:08] "GET /api/bookings_detail?start=2024-10-27&end=2024-12-08&_=1730697068685 HTTP/1.1" 200 -
+2024-11-04 10:41:09,129 INFO:127.0.0.1 - - [04/Nov/2024 10:41:09] "GET /favicon.ico HTTP/1.1" 200 -
+2024-11-04 10:41:09,163 INFO:127.0.0.1 - - [04/Nov/2024 10:41:09] "GET /api/bookings_summary HTTP/1.1" 200 -
+2024-11-04 10:41:10,035 INFO:127.0.0.1 - - [04/Nov/2024 10:41:10] "GET /listings_page HTTP/1.1" 200 -
+2024-11-04 10:41:10,325 INFO:127.0.0.1 - - [04/Nov/2024 10:41:10] "GET /listings HTTP/1.1" 200 -
+2024-11-04 10:41:10,635 INFO:127.0.0.1 - - [04/Nov/2024 10:41:10] "GET /favicon.ico HTTP/1.1" 200 -
+2024-11-04 10:41:11,512 INFO:127.0.0.1 - - [04/Nov/2024 10:41:11] "GET /Bookings HTTP/1.1" 200 -
+2024-11-04 10:41:11,790 INFO:127.0.0.1 - - [04/Nov/2024 10:41:11] "GET /earnings HTTP/1.1" 200 -
+2024-11-04 10:41:12,010 INFO:127.0.0.1 - - [04/Nov/2024 10:41:12] "GET /favicon.ico HTTP/1.1" 200 -
+2024-11-04 10:41:12,343 INFO:127.0.0.1 - - [04/Nov/2024 10:41:12] "GET /uploads HTTP/1.1" 200 -
+2024-11-04 10:41:12,683 INFO:127.0.0.1 - - [04/Nov/2024 10:41:12] "GET /favicon.ico HTTP/1.1" 200 -
+2024-11-04 10:41:14,342 INFO:127.0.0.1 - - [04/Nov/2024 10:41:14] "GET /earnings_page HTTP/1.1" 200 -
+2024-11-04 10:41:14,696 INFO:127.0.0.1 - - [04/Nov/2024 10:41:14] "GET /favicon.ico HTTP/1.1" 200 -
+2024-11-04 10:41:14,729 INFO:127.0.0.1 - - [04/Nov/2024 10:41:14] "GET /earnings HTTP/1.1" 200 -
+2024-11-04 10:41:20,309 INFO:127.0.0.1 - - [04/Nov/2024 10:41:20] "GET /listings_page HTTP/1.1" 200 -
+2024-11-04 10:41:20,725 INFO:127.0.0.1 - - [04/Nov/2024 10:41:20] "GET /listings HTTP/1.1" 200 -
+2024-11-04 10:41:20,753 INFO:127.0.0.1 - - [04/Nov/2024 10:41:20] "GET /favicon.ico HTTP/1.1" 200 -
+2024-11-04 10:44:52,571 INFO:127.0.0.1 - - [04/Nov/2024 10:44:52] "GET /Bookings HTTP/1.1" 200 -
+2024-11-04 10:44:52,825 INFO:127.0.0.1 - - [04/Nov/2024 10:44:52] "GET /earnings HTTP/1.1" 200 -
+2024-11-04 10:44:52,956 INFO:127.0.0.1 - - [04/Nov/2024 10:44:52] "GET /favicon.ico HTTP/1.1" 200 -
+2024-11-04 10:44:58,814 INFO:127.0.0.1 - - [04/Nov/2024 10:44:58] "GET /listings_page HTTP/1.1" 200 -
+2024-11-04 10:44:59,211 INFO:127.0.0.1 - - [04/Nov/2024 10:44:59] "GET /listings HTTP/1.1" 200 -
+2024-11-04 10:44:59,241 INFO:127.0.0.1 - - [04/Nov/2024 10:44:59] "GET /favicon.ico HTTP/1.1" 200 -
+2024-11-04 10:46:30,793 INFO:127.0.0.1 - - [04/Nov/2024 10:46:30] "[32mGET /logout HTTP/1.1[0m" 302 -
+2024-11-04 10:46:31,053 INFO:127.0.0.1 - - [04/Nov/2024 10:46:31] "GET /login HTTP/1.1" 200 -
+2024-11-04 10:46:31,397 INFO:127.0.0.1 - - [04/Nov/2024 10:46:31] "[32mGET /favicon.ico HTTP/1.1[0m" 302 -
+2024-11-04 10:46:31,714 INFO:127.0.0.1 - - [04/Nov/2024 10:46:31] "GET /login?next=/favicon.ico HTTP/1.1" 200 -
+2024-11-04 10:46:34,218 INFO:127.0.0.1 - - [04/Nov/2024 10:46:34] "[32mGET /favicon.ico HTTP/1.1[0m" 302 -
+2024-11-04 10:46:34,530 INFO:127.0.0.1 - - [04/Nov/2024 10:46:34] "GET /login?next=/favicon.ico HTTP/1.1" 200 -
+2024-11-04 10:46:35,520 INFO:127.0.0.1 - - [04/Nov/2024 10:46:35] "[32mGET /listings_page HTTP/1.1[0m" 302 -
+2024-11-04 10:46:35,840 INFO:127.0.0.1 - - [04/Nov/2024 10:46:35] "GET /login?next=/listings_page HTTP/1.1" 200 -
+2024-11-04 10:46:36,104 INFO:127.0.0.1 - - [04/Nov/2024 10:46:36] "[32mGET /favicon.ico HTTP/1.1[0m" 302 -
+2024-11-04 10:46:36,260 INFO:127.0.0.1 - - [04/Nov/2024 10:46:36] "GET /login?next=/favicon.ico HTTP/1.1" 200 -
+2024-11-04 10:46:42,529 INFO:127.0.0.1 - - [04/Nov/2024 10:46:42] "POST /login HTTP/1.1" 200 -
+2024-11-04 10:46:42,862 INFO:127.0.0.1 - - [04/Nov/2024 10:46:42] "GET / HTTP/1.1" 200 -
+2024-11-04 10:46:43,126 INFO:127.0.0.1 - - [04/Nov/2024 10:46:43] "GET /favicon.ico HTTP/1.1" 200 -
+2024-11-04 10:46:50,202 INFO:127.0.0.1 - - [04/Nov/2024 10:46:50] "GET / HTTP/1.1" 200 -
+2024-11-04 10:46:50,642 INFO:127.0.0.1 - - [04/Nov/2024 10:46:50] "GET /favicon.ico HTTP/1.1" 200 -
+2024-11-04 10:46:52,300 INFO:127.0.0.1 - - [04/Nov/2024 10:46:52] "GET /calendar HTTP/1.1" 200 -
+2024-11-04 10:46:52,822 INFO:127.0.0.1 - - [04/Nov/2024 10:46:52] "GET /favicon.ico HTTP/1.1" 200 -
+2024-11-04 10:46:52,959 INFO:127.0.0.1 - - [04/Nov/2024 10:46:52] "GET /api/bookings_summary HTTP/1.1" 200 -
+2024-11-04 10:46:53,013 INFO:127.0.0.1 - - [04/Nov/2024 10:46:53] "GET /api/bookings_detail?start=2024-10-27&end=2024-12-08&_=1730697412388 HTTP/1.1" 200 -
+2024-11-04 10:46:55,456 INFO:127.0.0.1 - - [04/Nov/2024 10:46:55] "GET /listings_page HTTP/1.1" 200 -
+2024-11-04 10:46:55,863 INFO:127.0.0.1 - - [04/Nov/2024 10:46:55] "GET /listings HTTP/1.1" 200 -
+2024-11-04 10:46:55,974 INFO:127.0.0.1 - - [04/Nov/2024 10:46:55] "GET /favicon.ico HTTP/1.1" 200 -
+2024-11-04 10:48:01,850 INFO: * Detected change in 'C:\\Users\\user\\Documents\\Internship-work\\bnbproject\\app.py', reloading
+2024-11-04 10:48:02,222 INFO: * Restarting with stat
+2024-11-04 10:48:03,999 WARNING: * Debugger is active!
+2024-11-04 10:48:04,003 INFO: * Debugger PIN: 131-490-941
+2024-11-04 10:53:37,414 INFO: * Detected change in 'C:\\Users\\user\\Documents\\Internship-work\\bnbproject\\app.py', reloading
+2024-11-04 10:53:37,653 INFO: * Restarting with stat
+2024-11-04 10:53:38,699 WARNING: * Debugger is active!
+2024-11-04 10:53:38,703 INFO: * Debugger PIN: 131-490-941
+2024-11-04 10:55:37,125 INFO: * Detected change in 'C:\\Users\\user\\Documents\\Internship-work\\bnbproject\\app.py', reloading
+2024-11-04 10:55:37,316 INFO: * Restarting with stat
+2024-11-04 10:55:38,451 WARNING: * Debugger is active!
+2024-11-04 10:55:38,454 INFO: * Debugger PIN: 131-490-941
+2024-11-04 10:56:03,815 INFO: * Detected change in 'C:\\Users\\user\\Documents\\Internship-work\\bnbproject\\routes.py', reloading
+2024-11-04 10:56:04,012 INFO: * Restarting with stat
+2024-11-04 10:56:05,056 WARNING: * Debugger is active!
+2024-11-04 10:56:05,058 INFO: * Debugger PIN: 131-490-941
+2024-11-04 10:56:21,356 INFO: * Detected change in 'C:\\Users\\user\\Documents\\Internship-work\\bnbproject\\routes.py', reloading
+2024-11-04 10:56:21,522 INFO: * Restarting with stat
+2024-11-04 10:56:22,681 WARNING: * Debugger is active!
+2024-11-04 10:56:22,683 INFO: * Debugger PIN: 131-490-941
+2024-11-04 10:56:29,817 INFO: * Detected change in 'C:\\Users\\user\\Documents\\Internship-work\\bnbproject\\routes.py', reloading
+2024-11-04 10:56:30,123 INFO: * Restarting with stat
+2024-11-04 10:56:31,285 WARNING: * Debugger is active!
+2024-11-04 10:56:31,289 INFO: * Debugger PIN: 131-490-941
+2024-11-04 10:56:33,317 INFO: * Detected change in 'C:\\Users\\user\\Documents\\Internship-work\\bnbproject\\routes.py', reloading
+2024-11-04 10:56:33,447 INFO: * Restarting with stat
+2024-11-04 10:56:34,477 WARNING: * Debugger is active!
+2024-11-04 10:56:34,483 INFO: * Debugger PIN: 131-490-941
+2024-11-04 10:56:40,575 INFO: * Detected change in 'C:\\Users\\user\\Documents\\Internship-work\\bnbproject\\models.py', reloading
+2024-11-04 10:56:40,833 INFO: * Restarting with stat
+2024-11-04 10:56:41,900 WARNING: * Debugger is active!
+2024-11-04 10:56:41,903 INFO: * Debugger PIN: 131-490-941
+2024-11-04 10:56:42,933 INFO: * Detected change in 'C:\\Users\\user\\Documents\\Internship-work\\bnbproject\\models.py', reloading
+2024-11-04 10:56:43,218 INFO: * Restarting with stat
+2024-11-04 10:56:44,282 WARNING: * Debugger is active!
+2024-11-04 10:56:44,285 INFO: * Debugger PIN: 131-490-941
+2024-11-04 10:56:52,401 INFO: * Detected change in 'C:\\Users\\user\\Documents\\Internship-work\\bnbproject\\app.py', reloading
+2024-11-04 10:56:52,842 INFO: * Restarting with stat
+2024-11-04 11:31:28,702 INFO:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8000
+ * Running on http://192.168.90.140:8000
+2024-11-04 11:31:28,705 INFO:[33mPress CTRL+C to quit[0m
+2024-11-04 11:31:28,707 INFO: * Restarting with stat
+2024-11-04 11:31:29,724 WARNING: * Debugger is active!
+2024-11-04 11:31:29,728 INFO: * Debugger PIN: 131-490-941
+2024-11-04 11:31:41,819 INFO:127.0.0.1 - - [04/Nov/2024 11:31:41] "GET / HTTP/1.1" 200 -
+2024-11-04 11:31:42,033 INFO:127.0.0.1 - - [04/Nov/2024 11:31:42] "GET /favicon.ico HTTP/1.1" 200 -
+2024-11-04 11:31:43,681 INFO:127.0.0.1 - - [04/Nov/2024 11:31:43] "GET /calendar HTTP/1.1" 200 -
+2024-11-04 11:31:44,126 INFO:127.0.0.1 - - [04/Nov/2024 11:31:44] "GET /favicon.ico HTTP/1.1" 200 -
+2024-11-04 11:31:44,186 INFO:127.0.0.1 - - [04/Nov/2024 11:31:44] "GET /api/bookings_summary HTTP/1.1" 200 -
+2024-11-04 11:31:44,225 INFO:127.0.0.1 - - [04/Nov/2024 11:31:44] "GET /api/bookings_detail?start=2024-10-27&end=2024-12-08&_=1730700103745 HTTP/1.1" 200 -
+2024-11-04 11:31:57,165 INFO: * Detected change in 'C:\\Users\\user\\Documents\\Internship-work\\bnbproject\\app.py', reloading
+2024-11-04 11:31:57,459 INFO: * Restarting with stat
+2024-11-04 11:31:58,557 WARNING: * Debugger is active!
+2024-11-04 11:31:58,559 INFO: * Debugger PIN: 131-490-941
+2024-11-04 11:32:34,050 INFO: * Detected change in 'C:\\Users\\user\\Documents\\Internship-work\\bnbproject\\app.py', reloading
+2024-11-04 11:32:34,492 INFO: * Restarting with stat
+2024-11-04 16:34:55,362 INFO:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8000
+ * Running on http://127.0.0.1:8000
+2024-11-04 16:34:55,364 INFO:[33mPress CTRL+C to quit[0m
+2024-11-04 16:34:55,365 INFO: * Restarting with stat
+2024-11-04 16:34:56,340 WARNING: * Debugger is active!
+2024-11-04 16:34:56,344 INFO: * Debugger PIN: 352-016-588
+2024-11-04 16:35:31,742 INFO:127.0.0.1 - - [04/Nov/2024 16:35:31] "[32mGET / HTTP/1.1[0m" 302 -
+2024-11-04 16:35:31,852 INFO:127.0.0.1 - - [04/Nov/2024 16:35:31] "GET /login?next=/ HTTP/1.1" 200 -
+2024-11-04 16:35:32,118 INFO:127.0.0.1 - - [04/Nov/2024 16:35:32] "[32mGET /favicon.ico HTTP/1.1[0m" 302 -
+2024-11-04 16:35:32,435 INFO:127.0.0.1 - - [04/Nov/2024 16:35:32] "GET /login?next=/favicon.ico HTTP/1.1" 200 -
+2024-11-04 16:35:45,990 INFO:127.0.0.1 - - [04/Nov/2024 16:35:45] "POST /login HTTP/1.1" 200 -
+2024-11-04 16:35:46,258 INFO:127.0.0.1 - - [04/Nov/2024 16:35:46] "GET / HTTP/1.1" 200 -
+2024-11-04 16:35:46,378 INFO:127.0.0.1 - - [04/Nov/2024 16:35:46] "GET /favicon.ico HTTP/1.1" 200 -
+2024-11-04 16:35:48,613 INFO:127.0.0.1 - - [04/Nov/2024 16:35:48] "GET /calendar HTTP/1.1" 200 -
+2024-11-04 16:35:48,861 INFO:127.0.0.1 - - [04/Nov/2024 16:35:48] "[35m[1mGET /api/bookings_detail?start=2024-10-27&end=2024-12-08&_=1730718348665 HTTP/1.1[0m" 500 -
+2024-11-04 16:35:49,062 INFO:127.0.0.1 - - [04/Nov/2024 16:35:49] "GET /favicon.ico HTTP/1.1" 200 -
+2024-11-04 16:35:49,128 INFO:127.0.0.1 - - [04/Nov/2024 16:35:49] "GET /api/bookings_summary HTTP/1.1" 200 -
+2024-11-04 16:35:51,608 INFO:127.0.0.1 - - [04/Nov/2024 16:35:51] "GET /listings_page HTTP/1.1" 200 -
+2024-11-04 16:35:51,950 INFO:127.0.0.1 - - [04/Nov/2024 16:35:51] "GET /favicon.ico HTTP/1.1" 200 -
+2024-11-04 16:35:51,953 INFO:127.0.0.1 - - [04/Nov/2024 16:35:51] "GET /listings HTTP/1.1" 200 -
+2024-11-04 16:35:59,041 INFO:127.0.0.1 - - [04/Nov/2024 16:35:59] "[35m[1mPOST /listings HTTP/1.1[0m" 201 -
+2024-11-04 16:36:01,512 INFO:127.0.0.1 - - [04/Nov/2024 16:36:01] "GET /listings HTTP/1.1" 200 -
+2024-11-04 16:40:07,232 INFO:127.0.0.1 - - [04/Nov/2024 16:40:07] "GET /Bookings HTTP/1.1" 200 -
+2024-11-04 16:40:07,607 INFO:127.0.0.1 - - [04/Nov/2024 16:40:07] "GET /earnings HTTP/1.1" 200 -
+2024-11-04 16:40:07,612 INFO:127.0.0.1 - - [04/Nov/2024 16:40:07] "GET /favicon.ico HTTP/1.1" 200 -
+2024-11-04 16:40:18,990 INFO:127.0.0.1 - - [04/Nov/2024 16:40:18] "GET /listings_page HTTP/1.1" 200 -
+2024-11-04 16:40:19,242 INFO:127.0.0.1 - - [04/Nov/2024 16:40:19] "GET /listings HTTP/1.1" 200 -
+2024-11-04 16:40:19,349 INFO:127.0.0.1 - - [04/Nov/2024 16:40:19] "GET /favicon.ico HTTP/1.1" 200 -
+2024-11-04 16:40:38,731 INFO:127.0.0.1 - - [04/Nov/2024 16:40:38] "GET /Bookings HTTP/1.1" 200 -
+2024-11-04 16:40:39,238 INFO:127.0.0.1 - - [04/Nov/2024 16:40:39] "GET /earnings HTTP/1.1" 200 -
+2024-11-04 16:40:39,238 INFO:127.0.0.1 - - [04/Nov/2024 16:40:39] "GET /favicon.ico HTTP/1.1" 200 -
+2024-11-04 16:40:41,799 INFO:127.0.0.1 - - [04/Nov/2024 16:40:41] "GET /calendar HTTP/1.1" 200 -
+2024-11-04 16:40:42,049 INFO:127.0.0.1 - - [04/Nov/2024 16:40:42] "[35m[1mGET /api/bookings_detail?start=2024-10-27&end=2024-12-08&_=1730718641823 HTTP/1.1[0m" 500 -
+2024-11-04 16:40:42,074 INFO:127.0.0.1 - - [04/Nov/2024 16:40:42] "GET /api/bookings_summary HTTP/1.1" 200 -
+2024-11-04 16:40:42,170 INFO:127.0.0.1 - - [04/Nov/2024 16:40:42] "GET /favicon.ico HTTP/1.1" 200 -
+2024-11-04 16:40:43,620 INFO:127.0.0.1 - - [04/Nov/2024 16:40:43] "GET /listings_page HTTP/1.1" 200 -
+2024-11-04 16:40:43,934 INFO:127.0.0.1 - - [04/Nov/2024 16:40:43] "GET /listings HTTP/1.1" 200 -
+2024-11-04 16:40:43,978 INFO:127.0.0.1 - - [04/Nov/2024 16:40:43] "GET /favicon.ico HTTP/1.1" 200 -
+2024-11-04 16:40:46,004 INFO:127.0.0.1 - - [04/Nov/2024 16:40:46] "GET /Bookings HTTP/1.1" 200 -
+2024-11-04 16:40:46,261 INFO:127.0.0.1 - - [04/Nov/2024 16:40:46] "GET /favicon.ico HTTP/1.1" 200 -
+2024-11-04 16:40:46,294 INFO:127.0.0.1 - - [04/Nov/2024 16:40:46] "GET /earnings HTTP/1.1" 200 -
+2024-11-04 16:40:55,745 INFO:127.0.0.1 - - [04/Nov/2024 16:40:55] "GET /listings_page HTTP/1.1" 200 -
+2024-11-04 16:40:56,141 INFO:127.0.0.1 - - [04/Nov/2024 16:40:56] "GET /favicon.ico HTTP/1.1" 200 -
+2024-11-04 16:40:56,143 INFO:127.0.0.1 - - [04/Nov/2024 16:40:56] "GET /listings HTTP/1.1" 200 -
+2024-11-04 16:41:12,798 INFO:127.0.0.1 - - [04/Nov/2024 16:41:12] "GET /Bookings HTTP/1.1" 200 -
+2024-11-04 16:41:13,125 INFO:127.0.0.1 - - [04/Nov/2024 16:41:13] "GET /favicon.ico HTTP/1.1" 200 -
+2024-11-04 16:41:13,133 INFO:127.0.0.1 - - [04/Nov/2024 16:41:13] "GET /earnings HTTP/1.1" 200 -
+2024-11-04 16:41:16,542 INFO:127.0.0.1 - - [04/Nov/2024 16:41:16] "GET /listings_page HTTP/1.1" 200 -
+2024-11-04 16:41:16,860 INFO:127.0.0.1 - - [04/Nov/2024 16:41:16] "GET /favicon.ico HTTP/1.1" 200 -
+2024-11-04 16:41:16,865 INFO:127.0.0.1 - - [04/Nov/2024 16:41:16] "GET /listings HTTP/1.1" 200 -
+2024-11-04 16:41:17,827 INFO:127.0.0.1 - - [04/Nov/2024 16:41:17] "GET /earnings_page HTTP/1.1" 200 -
+2024-11-04 16:41:18,230 INFO:127.0.0.1 - - [04/Nov/2024 16:41:18] "GET /favicon.ico HTTP/1.1" 200 -
+2024-11-04 16:41:18,235 INFO:127.0.0.1 - - [04/Nov/2024 16:41:18] "GET /earnings HTTP/1.1" 200 -
+2024-11-04 16:41:21,033 INFO:127.0.0.1 - - [04/Nov/2024 16:41:21] "GET /Bookings HTTP/1.1" 200 -
+2024-11-04 16:41:21,371 INFO:127.0.0.1 - - [04/Nov/2024 16:41:21] "GET /earnings HTTP/1.1" 200 -
+2024-11-04 16:41:21,409 INFO:127.0.0.1 - - [04/Nov/2024 16:41:21] "GET /favicon.ico HTTP/1.1" 200 -
+2024-11-04 16:41:25,378 INFO:127.0.0.1 - - [04/Nov/2024 16:41:25] "GET /listings_page HTTP/1.1" 200 -
+2024-11-04 16:41:25,678 INFO:127.0.0.1 - - [04/Nov/2024 16:41:25] "GET /listings HTTP/1.1" 200 -
+2024-11-04 16:41:25,868 INFO:127.0.0.1 - - [04/Nov/2024 16:41:25] "GET /favicon.ico HTTP/1.1" 200 -
+2024-11-04 16:41:29,375 INFO:127.0.0.1 - - [04/Nov/2024 16:41:29] "GET /Bookings HTTP/1.1" 200 -
+2024-11-04 16:41:29,664 INFO:127.0.0.1 - - [04/Nov/2024 16:41:29] "GET /earnings HTTP/1.1" 200 -
+2024-11-04 16:41:29,739 INFO:127.0.0.1 - - [04/Nov/2024 16:41:29] "GET /favicon.ico HTTP/1.1" 200 -
+2024-11-04 16:41:37,848 INFO:127.0.0.1 - - [04/Nov/2024 16:41:37] "GET /Bookings HTTP/1.1" 200 -
+2024-11-04 16:41:37,947 INFO:127.0.0.1 - - [04/Nov/2024 16:41:37] "GET /earnings HTTP/1.1" 200 -
+2024-11-04 16:41:38,115 INFO:127.0.0.1 - - [04/Nov/2024 16:41:38] "GET /favicon.ico HTTP/1.1" 200 -
+2024-11-04 16:41:41,919 INFO:127.0.0.1 - - [04/Nov/2024 16:41:41] "GET /calendar HTTP/1.1" 200 -
+2024-11-04 16:41:42,175 INFO:127.0.0.1 - - [04/Nov/2024 16:41:42] "[35m[1mGET /api/bookings_detail?start=2024-10-27&end=2024-12-08&_=1730718701938 HTTP/1.1[0m" 500 -
+2024-11-04 16:41:42,284 INFO:127.0.0.1 - - [04/Nov/2024 16:41:42] "GET /favicon.ico HTTP/1.1" 200 -
+2024-11-04 16:41:42,303 INFO:127.0.0.1 - - [04/Nov/2024 16:41:42] "GET /api/bookings_summary HTTP/1.1" 200 -
+2024-11-04 16:44:38,310 INFO: * Detected change in 'C:\\Users\\user\\Documents\\Internship-work\\bnbproject\\constants.py', reloading
+2024-11-04 16:44:38,820 INFO: * Restarting with stat
+2024-11-04 16:44:39,844 WARNING: * Debugger is active!
+2024-11-04 16:44:39,847 INFO: * Debugger PIN: 352-016-588
+2024-11-04 16:45:24,613 INFO:127.0.0.1 - - [04/Nov/2024 16:45:24] "GET /listings_page HTTP/1.1" 200 -
+2024-11-04 16:45:24,826 INFO:127.0.0.1 - - [04/Nov/2024 16:45:24] "GET /listings HTTP/1.1" 200 -
+2024-11-04 16:45:24,854 INFO:127.0.0.1 - - [04/Nov/2024 16:45:24] "GET /favicon.ico HTTP/1.1" 200 -
+2024-11-04 16:46:56,451 INFO:127.0.0.1 - - [04/Nov/2024 16:46:56] "GET /listings_page HTTP/1.1" 200 -
+2024-11-04 16:46:56,601 INFO:127.0.0.1 - - [04/Nov/2024 16:46:56] "GET /listings HTTP/1.1" 200 -
+2024-11-04 16:46:56,681 INFO:127.0.0.1 - - [04/Nov/2024 16:46:56] "GET /favicon.ico HTTP/1.1" 200 -
+2024-11-04 16:47:31,583 INFO:127.0.0.1 - - [04/Nov/2024 16:47:31] "GET /listings_page HTTP/1.1" 200 -
+2024-11-04 16:47:31,735 INFO:127.0.0.1 - - [04/Nov/2024 16:47:31] "GET /listings HTTP/1.1" 200 -
+2024-11-04 16:47:31,818 INFO:127.0.0.1 - - [04/Nov/2024 16:47:31] "GET /favicon.ico HTTP/1.1" 200 -
+2024-11-04 16:48:41,379 INFO:127.0.0.1 - - [04/Nov/2024 16:48:41] "GET /listings_page HTTP/1.1" 200 -
+2024-11-04 16:48:41,519 INFO:127.0.0.1 - - [04/Nov/2024 16:48:41] "GET /listings HTTP/1.1" 200 -
+2024-11-04 16:48:41,610 INFO:127.0.0.1 - - [04/Nov/2024 16:48:41] "GET /favicon.ico HTTP/1.1" 200 -
+2024-11-04 16:49:18,263 INFO:127.0.0.1 - - [04/Nov/2024 16:49:18] "GET /listings_page HTTP/1.1" 200 -
+2024-11-04 16:49:18,392 INFO:127.0.0.1 - - [04/Nov/2024 16:49:18] "GET /listings HTTP/1.1" 200 -
+2024-11-04 16:49:18,510 INFO:127.0.0.1 - - [04/Nov/2024 16:49:18] "GET /favicon.ico HTTP/1.1" 200 -
+2024-11-04 16:49:23,506 INFO:127.0.0.1 - - [04/Nov/2024 16:49:23] "GET /listings_page HTTP/1.1" 200 -
+2024-11-04 16:49:23,623 INFO:127.0.0.1 - - [04/Nov/2024 16:49:23] "GET /listings HTTP/1.1" 200 -
+2024-11-04 16:49:23,748 INFO:127.0.0.1 - - [04/Nov/2024 16:49:23] "GET /favicon.ico HTTP/1.1" 200 -
+2024-11-04 16:49:38,764 INFO:127.0.0.1 - - [04/Nov/2024 16:49:38] "GET /listings_page HTTP/1.1" 200 -
+2024-11-04 16:49:38,882 INFO:127.0.0.1 - - [04/Nov/2024 16:49:38] "GET /listings HTTP/1.1" 200 -
+2024-11-04 16:49:38,987 INFO:127.0.0.1 - - [04/Nov/2024 16:49:38] "GET /favicon.ico HTTP/1.1" 200 -
+2024-11-04 16:50:00,931 INFO:127.0.0.1 - - [04/Nov/2024 16:50:00] "GET /listings_page HTTP/1.1" 200 -
+2024-11-04 16:50:01,038 INFO:127.0.0.1 - - [04/Nov/2024 16:50:01] "GET /listings HTTP/1.1" 200 -
+2024-11-04 16:50:01,177 INFO:127.0.0.1 - - [04/Nov/2024 16:50:01] "GET /favicon.ico HTTP/1.1" 200 -
+2024-11-04 16:50:13,200 INFO:127.0.0.1 - - [04/Nov/2024 16:50:13] "GET /listings_page HTTP/1.1" 200 -
+2024-11-04 16:50:13,323 INFO:127.0.0.1 - - [04/Nov/2024 16:50:13] "GET /listings HTTP/1.1" 200 -
+2024-11-04 16:50:13,430 INFO:127.0.0.1 - - [04/Nov/2024 16:50:13] "GET /favicon.ico HTTP/1.1" 200 -
+2024-11-04 16:50:30,112 INFO:127.0.0.1 - - [04/Nov/2024 16:50:30] "GET /listings_page HTTP/1.1" 200 -
+2024-11-04 16:50:30,169 INFO:127.0.0.1 - - [04/Nov/2024 16:50:30] "GET /listings HTTP/1.1" 200 -
+2024-11-04 16:50:30,375 INFO:127.0.0.1 - - [04/Nov/2024 16:50:30] "GET /favicon.ico HTTP/1.1" 200 -
+2024-11-04 16:50:39,461 INFO:127.0.0.1 - - [04/Nov/2024 16:50:39] "GET /listings_page HTTP/1.1" 200 -
+2024-11-04 16:50:39,779 INFO:127.0.0.1 - - [04/Nov/2024 16:50:39] "GET /listings HTTP/1.1" 200 -
+2024-11-04 16:50:39,816 INFO:127.0.0.1 - - [04/Nov/2024 16:50:39] "GET /favicon.ico HTTP/1.1" 200 -
+2024-11-04 17:02:53,417 INFO:127.0.0.1 - - [04/Nov/2024 17:02:53] "GET /listings_page HTTP/1.1" 200 -
+2024-11-04 17:02:53,675 INFO:127.0.0.1 - - [04/Nov/2024 17:02:53] "GET /listings HTTP/1.1" 200 -
+2024-11-04 17:02:53,691 INFO:127.0.0.1 - - [04/Nov/2024 17:02:53] "GET /favicon.ico HTTP/1.1" 200 -
+2024-11-04 17:03:43,727 INFO:127.0.0.1 - - [04/Nov/2024 17:03:43] "GET /listings_page HTTP/1.1" 200 -
+2024-11-04 17:03:44,039 INFO:127.0.0.1 - - [04/Nov/2024 17:03:44] "GET /listings HTTP/1.1" 200 -
+2024-11-04 17:03:44,040 INFO:127.0.0.1 - - [04/Nov/2024 17:03:44] "GET /favicon.ico HTTP/1.1" 200 -
+2024-11-04 17:03:50,494 INFO:127.0.0.1 - - [04/Nov/2024 17:03:50] "GET /listings_page HTTP/1.1" 200 -
+2024-11-04 17:03:50,620 INFO:127.0.0.1 - - [04/Nov/2024 17:03:50] "GET /listings HTTP/1.1" 200 -
+2024-11-04 17:03:50,741 INFO:127.0.0.1 - - [04/Nov/2024 17:03:50] "GET /favicon.ico HTTP/1.1" 200 -
+2024-11-04 17:03:59,312 INFO:127.0.0.1 - - [04/Nov/2024 17:03:59] "GET /listings_page HTTP/1.1" 200 -
+2024-11-04 17:03:59,419 INFO:127.0.0.1 - - [04/Nov/2024 17:03:59] "GET /listings HTTP/1.1" 200 -
+2024-11-04 17:03:59,533 INFO:127.0.0.1 - - [04/Nov/2024 17:03:59] "GET /favicon.ico HTTP/1.1" 200 -
+2024-11-04 17:04:10,279 INFO:127.0.0.1 - - [04/Nov/2024 17:04:10] "GET /listings_page HTTP/1.1" 200 -
+2024-11-04 17:04:10,394 INFO:127.0.0.1 - - [04/Nov/2024 17:04:10] "GET /listings HTTP/1.1" 200 -
+2024-11-04 17:04:10,503 INFO:127.0.0.1 - - [04/Nov/2024 17:04:10] "GET /favicon.ico HTTP/1.1" 200 -
+2024-11-04 17:04:19,698 INFO:127.0.0.1 - - [04/Nov/2024 17:04:19] "GET /listings_page HTTP/1.1" 200 -
+2024-11-04 17:04:19,820 INFO:127.0.0.1 - - [04/Nov/2024 17:04:19] "GET /listings HTTP/1.1" 200 -
+2024-11-04 17:04:19,940 INFO:127.0.0.1 - - [04/Nov/2024 17:04:19] "GET /favicon.ico HTTP/1.1" 200 -
+2024-11-04 17:27:41,607 INFO:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8000
+ * Running on http://192.168.161.140:8000
+2024-11-04 17:27:41,608 INFO:[33mPress CTRL+C to quit[0m
+2024-11-04 17:27:41,610 INFO: * Restarting with stat
+2024-11-04 17:27:42,957 WARNING: * Debugger is active!
+2024-11-04 17:27:42,963 INFO: * Debugger PIN: 107-410-980
+2024-11-04 17:27:50,700 INFO:127.0.0.1 - - [04/Nov/2024 17:27:50] "[32mGET /listings_page HTTP/1.1[0m" 302 -
+2024-11-04 17:27:50,712 INFO:127.0.0.1 - - [04/Nov/2024 17:27:50] "GET /login?next=/listings_page HTTP/1.1" 200 -
+2024-11-04 17:27:51,009 INFO:127.0.0.1 - - [04/Nov/2024 17:27:51] "[32mGET /favicon.ico HTTP/1.1[0m" 302 -
+2024-11-04 17:27:51,323 INFO:127.0.0.1 - - [04/Nov/2024 17:27:51] "GET /login?next=/favicon.ico HTTP/1.1" 200 -
+2024-11-04 17:27:55,278 INFO:127.0.0.1 - - [04/Nov/2024 17:27:55] "POST /login HTTP/1.1" 200 -
+2024-11-04 17:27:55,574 INFO:127.0.0.1 - - [04/Nov/2024 17:27:55] "GET / HTTP/1.1" 200 -
+2024-11-04 17:27:55,717 INFO:127.0.0.1 - - [04/Nov/2024 17:27:55] "GET /favicon.ico HTTP/1.1" 200 -
+2024-11-04 17:27:57,550 INFO:127.0.0.1 - - [04/Nov/2024 17:27:57] "GET /listings_page HTTP/1.1" 200 -
+2024-11-04 17:27:57,800 INFO:127.0.0.1 - - [04/Nov/2024 17:27:57] "GET /listings HTTP/1.1" 200 -
+2024-11-04 17:27:57,986 INFO:127.0.0.1 - - [04/Nov/2024 17:27:57] "GET /favicon.ico HTTP/1.1" 200 -
+2024-11-04 17:28:14,123 INFO:127.0.0.1 - - [04/Nov/2024 17:28:14] "GET /listings_page HTTP/1.1" 200 -
+2024-11-04 17:28:14,349 INFO:127.0.0.1 - - [04/Nov/2024 17:28:14] "GET /listings HTTP/1.1" 200 -
+2024-11-04 17:28:14,356 INFO:127.0.0.1 - - [04/Nov/2024 17:28:14] "GET /favicon.ico HTTP/1.1" 200 -
+2024-11-04 17:28:55,356 INFO:127.0.0.1 - - [04/Nov/2024 17:28:55] "GET /listings_page HTTP/1.1" 200 -
+2024-11-04 17:28:55,466 INFO:127.0.0.1 - - [04/Nov/2024 17:28:55] "GET /listings HTTP/1.1" 200 -
+2024-11-04 17:28:55,609 INFO:127.0.0.1 - - [04/Nov/2024 17:28:55] "GET /favicon.ico HTTP/1.1" 200 -
+2024-11-04 17:29:33,495 INFO:127.0.0.1 - - [04/Nov/2024 17:29:33] "GET /listings_page HTTP/1.1" 200 -
+2024-11-04 17:29:33,741 INFO:127.0.0.1 - - [04/Nov/2024 17:29:33] "GET /listings HTTP/1.1" 200 -
+2024-11-04 17:29:33,747 INFO:127.0.0.1 - - [04/Nov/2024 17:29:33] "GET /favicon.ico HTTP/1.1" 200 -
+2024-11-04 17:49:08,377 INFO:127.0.0.1 - - [04/Nov/2024 17:49:08] "GET /listings_page HTTP/1.1" 200 -
+2024-11-04 17:49:08,872 INFO:127.0.0.1 - - [04/Nov/2024 17:49:08] "GET /listings HTTP/1.1" 200 -
+2024-11-04 17:49:08,966 INFO:127.0.0.1 - - [04/Nov/2024 17:49:08] "GET /favicon.ico HTTP/1.1" 200 -
+2024-11-04 17:49:34,255 INFO:127.0.0.1 - - [04/Nov/2024 17:49:34] "GET /listings_page HTTP/1.1" 200 -
+2024-11-04 17:49:34,543 INFO:127.0.0.1 - - [04/Nov/2024 17:49:34] "GET /listings HTTP/1.1" 200 -
+2024-11-04 17:49:34,560 INFO:127.0.0.1 - - [04/Nov/2024 17:49:34] "GET /favicon.ico HTTP/1.1" 200 -
+2024-11-04 17:49:42,652 INFO:127.0.0.1 - - [04/Nov/2024 17:49:42] "GET /listings_page HTTP/1.1" 200 -
+2024-11-04 17:49:42,869 INFO:127.0.0.1 - - [04/Nov/2024 17:49:42] "GET /listings HTTP/1.1" 200 -
+2024-11-04 17:49:42,876 INFO:127.0.0.1 - - [04/Nov/2024 17:49:42] "GET /favicon.ico HTTP/1.1" 200 -
+2024-11-04 17:50:18,150 INFO:127.0.0.1 - - [04/Nov/2024 17:50:18] "GET /listings_page HTTP/1.1" 200 -
+2024-11-04 17:50:18,386 INFO:127.0.0.1 - - [04/Nov/2024 17:50:18] "GET /listings HTTP/1.1" 200 -
+2024-11-04 17:50:18,392 INFO:127.0.0.1 - - [04/Nov/2024 17:50:18] "GET /favicon.ico HTTP/1.1" 200 -
+2024-11-04 17:52:26,765 INFO:127.0.0.1 - - [04/Nov/2024 17:52:26] "GET /listings_page HTTP/1.1" 200 -
+2024-11-04 17:52:26,895 INFO:127.0.0.1 - - [04/Nov/2024 17:52:26] "GET /listings HTTP/1.1" 200 -
+2024-11-04 17:52:27,016 INFO:127.0.0.1 - - [04/Nov/2024 17:52:27] "GET /favicon.ico HTTP/1.1" 200 -
+2024-11-04 17:53:19,052 INFO:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8000
+ * Running on http://192.168.161.140:8000
+2024-11-04 17:53:19,052 INFO:[33mPress CTRL+C to quit[0m
+2024-11-04 17:53:19,055 INFO: * Restarting with stat
+2024-11-04 17:53:20,684 WARNING: * Debugger is active!
+2024-11-04 17:53:20,689 INFO: * Debugger PIN: 107-410-980
+2024-11-04 17:53:21,252 INFO:127.0.0.1 - - [04/Nov/2024 17:53:21] "GET /listings_page HTTP/1.1" 200 -
+2024-11-04 17:53:21,456 INFO:127.0.0.1 - - [04/Nov/2024 17:53:21] "GET /listings HTTP/1.1" 200 -
+2024-11-04 17:53:21,503 INFO:127.0.0.1 - - [04/Nov/2024 17:53:21] "GET /favicon.ico HTTP/1.1" 200 -
+2024-11-04 17:56:10,914 INFO:127.0.0.1 - - [04/Nov/2024 17:56:10] "GET /listings_page HTTP/1.1" 200 -
+2024-11-04 17:56:11,048 INFO:127.0.0.1 - - [04/Nov/2024 17:56:11] "GET /listings HTTP/1.1" 200 -
+2024-11-04 17:56:11,150 INFO:127.0.0.1 - - [04/Nov/2024 17:56:11] "GET /favicon.ico HTTP/1.1" 200 -
+2024-11-04 17:56:49,795 INFO:127.0.0.1 - - [04/Nov/2024 17:56:49] "GET /listings_page HTTP/1.1" 200 -
+2024-11-04 17:56:49,968 INFO:127.0.0.1 - - [04/Nov/2024 17:56:49] "GET /listings HTTP/1.1" 200 -
+2024-11-04 17:56:50,038 INFO:127.0.0.1 - - [04/Nov/2024 17:56:50] "GET /favicon.ico HTTP/1.1" 200 -
+2024-11-04 17:57:05,057 INFO:127.0.0.1 - - [04/Nov/2024 17:57:05] "GET /listings_page HTTP/1.1" 200 -
+2024-11-04 17:57:05,270 INFO:127.0.0.1 - - [04/Nov/2024 17:57:05] "GET /listings HTTP/1.1" 200 -
+2024-11-04 17:57:05,287 INFO:127.0.0.1 - - [04/Nov/2024 17:57:05] "GET /favicon.ico HTTP/1.1" 200 -
+2024-11-04 18:04:16,050 INFO:127.0.0.1 - - [04/Nov/2024 18:04:16] "GET /listings_page HTTP/1.1" 200 -
+2024-11-04 18:04:16,268 INFO:127.0.0.1 - - [04/Nov/2024 18:04:16] "GET /listings HTTP/1.1" 200 -
+2024-11-04 18:04:16,302 INFO:127.0.0.1 - - [04/Nov/2024 18:04:16] "GET /favicon.ico HTTP/1.1" 200 -
+2024-11-04 18:04:53,100 INFO:127.0.0.1 - - [04/Nov/2024 18:04:53] "GET /listings_page HTTP/1.1" 200 -
+2024-11-04 18:04:53,256 INFO:127.0.0.1 - - [04/Nov/2024 18:04:53] "GET /listings HTTP/1.1" 200 -
+2024-11-04 18:04:53,379 INFO:127.0.0.1 - - [04/Nov/2024 18:04:53] "GET /favicon.ico HTTP/1.1" 200 -
+2024-11-04 18:05:30,914 INFO:127.0.0.1 - - [04/Nov/2024 18:05:30] "GET /listings_page HTTP/1.1" 200 -
+2024-11-04 18:05:31,079 INFO:127.0.0.1 - - [04/Nov/2024 18:05:31] "GET /listings HTTP/1.1" 200 -
+2024-11-04 18:05:31,196 INFO:127.0.0.1 - - [04/Nov/2024 18:05:31] "GET /favicon.ico HTTP/1.1" 200 -
+2024-11-04 18:06:51,358 INFO:127.0.0.1 - - [04/Nov/2024 18:06:51] "GET /listings_page HTTP/1.1" 200 -
+2024-11-04 18:06:51,645 INFO:127.0.0.1 - - [04/Nov/2024 18:06:51] "GET /listings HTTP/1.1" 200 -
+2024-11-04 18:06:51,651 INFO:127.0.0.1 - - [04/Nov/2024 18:06:51] "GET /favicon.ico HTTP/1.1" 200 -
+2024-11-04 18:07:25,562 INFO:127.0.0.1 - - [04/Nov/2024 18:07:25] "GET /listings_page HTTP/1.1" 200 -
+2024-11-04 18:07:25,841 INFO:127.0.0.1 - - [04/Nov/2024 18:07:25] "GET /listings HTTP/1.1" 200 -
+2024-11-04 18:07:25,850 INFO:127.0.0.1 - - [04/Nov/2024 18:07:25] "GET /favicon.ico HTTP/1.1" 200 -
+2024-11-04 18:08:23,230 INFO:127.0.0.1 - - [04/Nov/2024 18:08:23] "GET /listings_page HTTP/1.1" 200 -
+2024-11-04 18:08:23,476 INFO:127.0.0.1 - - [04/Nov/2024 18:08:23] "GET /listings HTTP/1.1" 200 -
+2024-11-04 18:08:23,484 INFO:127.0.0.1 - - [04/Nov/2024 18:08:23] "GET /favicon.ico HTTP/1.1" 200 -
+2024-11-04 18:10:58,810 INFO:127.0.0.1 - - [04/Nov/2024 18:10:58] "GET /listings_page HTTP/1.1" 200 -
+2024-11-04 18:10:59,027 INFO:127.0.0.1 - - [04/Nov/2024 18:10:59] "GET /listings HTTP/1.1" 200 -
+2024-11-04 18:10:59,070 INFO:127.0.0.1 - - [04/Nov/2024 18:10:59] "GET /favicon.ico HTTP/1.1" 200 -
+2024-11-04 18:12:54,552 INFO:127.0.0.1 - - [04/Nov/2024 18:12:54] "GET /listings_page HTTP/1.1" 200 -
+2024-11-04 18:12:54,755 INFO:127.0.0.1 - - [04/Nov/2024 18:12:54] "GET /listings HTTP/1.1" 200 -
+2024-11-04 18:12:54,792 INFO:127.0.0.1 - - [04/Nov/2024 18:12:54] "GET /favicon.ico HTTP/1.1" 200 -
+2024-11-04 18:13:38,668 INFO:127.0.0.1 - - [04/Nov/2024 18:13:38] "GET /listings_page HTTP/1.1" 200 -
+2024-11-04 18:13:38,851 INFO:127.0.0.1 - - [04/Nov/2024 18:13:38] "GET /listings HTTP/1.1" 200 -
+2024-11-04 18:13:38,858 INFO:127.0.0.1 - - [04/Nov/2024 18:13:38] "GET /favicon.ico HTTP/1.1" 200 -
+2024-11-04 18:14:39,217 INFO:127.0.0.1 - - [04/Nov/2024 18:14:39] "GET /listings_page HTTP/1.1" 200 -
+2024-11-04 18:14:39,411 INFO:127.0.0.1 - - [04/Nov/2024 18:14:39] "GET /listings HTTP/1.1" 200 -
+2024-11-04 18:14:39,461 INFO:127.0.0.1 - - [04/Nov/2024 18:14:39] "GET /favicon.ico HTTP/1.1" 200 -
+2024-11-04 18:20:15,447 INFO:127.0.0.1 - - [04/Nov/2024 18:20:15] "GET /listings_page HTTP/1.1" 200 -
+2024-11-04 18:20:16,033 INFO:127.0.0.1 - - [04/Nov/2024 18:20:16] "GET /favicon.ico HTTP/1.1" 200 -
+2024-11-04 18:20:16,034 INFO:127.0.0.1 - - [04/Nov/2024 18:20:16] "GET /listings HTTP/1.1" 200 -
+2024-11-04 18:21:13,973 INFO:127.0.0.1 - - [04/Nov/2024 18:21:13] "GET /listings_page HTTP/1.1" 200 -
+2024-11-04 18:21:14,173 INFO:127.0.0.1 - - [04/Nov/2024 18:21:14] "GET /listings HTTP/1.1" 200 -
+2024-11-04 18:21:14,211 INFO:127.0.0.1 - - [04/Nov/2024 18:21:14] "GET /favicon.ico HTTP/1.1" 200 -
+2024-11-04 18:21:27,750 INFO:127.0.0.1 - - [04/Nov/2024 18:21:27] "GET /listings_page HTTP/1.1" 200 -
+2024-11-04 18:21:27,969 INFO:127.0.0.1 - - [04/Nov/2024 18:21:27] "GET /listings HTTP/1.1" 200 -
+2024-11-04 18:21:27,975 INFO:127.0.0.1 - - [04/Nov/2024 18:21:27] "GET /favicon.ico HTTP/1.1" 200 -
+2024-11-04 18:22:23,596 INFO:127.0.0.1 - - [04/Nov/2024 18:22:23] "GET /Bookings HTTP/1.1" 200 -
+2024-11-04 18:22:23,961 INFO:127.0.0.1 - - [04/Nov/2024 18:22:23] "GET /earnings HTTP/1.1" 200 -
+2024-11-04 18:22:24,082 INFO:127.0.0.1 - - [04/Nov/2024 18:22:24] "GET /favicon.ico HTTP/1.1" 200 -
+2024-11-04 18:36:36,148 INFO:127.0.0.1 - - [04/Nov/2024 18:36:36] "GET /Bookings HTTP/1.1" 200 -
+2024-11-04 18:36:36,387 INFO:127.0.0.1 - - [04/Nov/2024 18:36:36] "GET /earnings HTTP/1.1" 200 -
+2024-11-04 18:36:36,388 INFO:127.0.0.1 - - [04/Nov/2024 18:36:36] "GET /favicon.ico HTTP/1.1" 200 -
+2024-11-04 18:36:40,612 INFO:127.0.0.1 - - [04/Nov/2024 18:36:40] "GET /favicon.ico HTTP/1.1" 200 -
+2024-11-04 18:42:31,838 INFO:127.0.0.1 - - [04/Nov/2024 18:42:31] "GET /Bookings HTTP/1.1" 200 -
+2024-11-04 18:42:32,086 INFO:127.0.0.1 - - [04/Nov/2024 18:42:32] "GET /earnings HTTP/1.1" 200 -
+2024-11-04 18:42:32,159 INFO:127.0.0.1 - - [04/Nov/2024 18:42:32] "GET /favicon.ico HTTP/1.1" 200 -
+2024-11-04 18:43:19,777 INFO:127.0.0.1 - - [04/Nov/2024 18:43:19] "GET /Bookings HTTP/1.1" 200 -
+2024-11-04 18:43:20,131 INFO:127.0.0.1 - - [04/Nov/2024 18:43:20] "GET /favicon.ico HTTP/1.1" 200 -
+2024-11-04 18:43:20,173 INFO:127.0.0.1 - - [04/Nov/2024 18:43:20] "GET /earnings HTTP/1.1" 200 -
+2024-11-04 18:47:52,967 INFO:127.0.0.1 - - [04/Nov/2024 18:47:52] "GET /Bookings HTTP/1.1" 200 -
+2024-11-04 18:47:53,059 INFO:127.0.0.1 - - [04/Nov/2024 18:47:53] "GET /earnings HTTP/1.1" 200 -
+2024-11-04 18:47:53,230 INFO:127.0.0.1 - - [04/Nov/2024 18:47:53] "GET /favicon.ico HTTP/1.1" 200 -
+2024-11-04 18:47:55,753 INFO:127.0.0.1 - - [04/Nov/2024 18:47:55] "GET /Bookings HTTP/1.1" 200 -
+2024-11-04 18:47:56,086 INFO:127.0.0.1 - - [04/Nov/2024 18:47:56] "GET /favicon.ico HTTP/1.1" 200 -
+2024-11-04 18:47:56,124 INFO:127.0.0.1 - - [04/Nov/2024 18:47:56] "GET /earnings HTTP/1.1" 200 -
+2024-11-04 18:47:59,660 INFO:127.0.0.1 - - [04/Nov/2024 18:47:59] "GET /favicon.ico HTTP/1.1" 200 -
+2024-11-04 18:50:40,230 INFO:127.0.0.1 - - [04/Nov/2024 18:50:40] "GET /Bookings HTTP/1.1" 200 -
+2024-11-04 18:50:40,424 INFO:127.0.0.1 - - [04/Nov/2024 18:50:40] "GET /earnings HTTP/1.1" 200 -
+2024-11-04 18:50:40,452 INFO:127.0.0.1 - - [04/Nov/2024 18:50:40] "GET /favicon.ico HTTP/1.1" 200 -
+2024-11-04 18:51:10,617 INFO:127.0.0.1 - - [04/Nov/2024 18:51:10] "GET /Bookings HTTP/1.1" 200 -
+2024-11-04 18:51:10,911 INFO:127.0.0.1 - - [04/Nov/2024 18:51:10] "GET /earnings HTTP/1.1" 200 -
+2024-11-04 18:51:11,126 INFO:127.0.0.1 - - [04/Nov/2024 18:51:11] "GET /favicon.ico HTTP/1.1" 200 -
+2024-11-04 18:53:22,510 INFO:127.0.0.1 - - [04/Nov/2024 18:53:22] "GET /Bookings HTTP/1.1" 200 -
+2024-11-04 18:53:22,734 INFO:127.0.0.1 - - [04/Nov/2024 18:53:22] "GET /earnings HTTP/1.1" 200 -
+2024-11-04 18:53:22,734 INFO:127.0.0.1 - - [04/Nov/2024 18:53:22] "GET /favicon.ico HTTP/1.1" 200 -
+2024-11-04 18:54:15,409 INFO:127.0.0.1 - - [04/Nov/2024 18:54:15] "GET /Bookings HTTP/1.1" 200 -
+2024-11-04 18:54:15,702 INFO:127.0.0.1 - - [04/Nov/2024 18:54:15] "GET /earnings HTTP/1.1" 200 -
+2024-11-04 18:54:15,935 INFO:127.0.0.1 - - [04/Nov/2024 18:54:15] "GET /favicon.ico HTTP/1.1" 200 -
+2024-11-04 18:56:05,520 INFO:127.0.0.1 - - [04/Nov/2024 18:56:05] "GET /Bookings HTTP/1.1" 200 -
+2024-11-04 18:56:05,845 INFO:127.0.0.1 - - [04/Nov/2024 18:56:05] "GET /favicon.ico HTTP/1.1" 200 -
+2024-11-04 18:56:05,846 INFO:127.0.0.1 - - [04/Nov/2024 18:56:05] "GET /earnings HTTP/1.1" 200 -
+2024-11-04 18:56:49,269 INFO:127.0.0.1 - - [04/Nov/2024 18:56:49] "GET /Bookings HTTP/1.1" 200 -
+2024-11-04 18:56:49,587 INFO:127.0.0.1 - - [04/Nov/2024 18:56:49] "GET /earnings HTTP/1.1" 200 -
+2024-11-04 18:56:49,722 INFO:127.0.0.1 - - [04/Nov/2024 18:56:49] "GET /favicon.ico HTTP/1.1" 200 -
+2024-11-04 18:57:50,650 INFO:127.0.0.1 - - [04/Nov/2024 18:57:50] "GET /Bookings HTTP/1.1" 200 -
+2024-11-04 18:57:50,937 INFO:127.0.0.1 - - [04/Nov/2024 18:57:50] "GET /earnings HTTP/1.1" 200 -
+2024-11-04 18:57:51,059 INFO:127.0.0.1 - - [04/Nov/2024 18:57:51] "GET /favicon.ico HTTP/1.1" 200 -

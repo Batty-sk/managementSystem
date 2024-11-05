@@ -1,0 +1,486 @@
+{% extends "base.html" %}
+    <title>{% block title %}Manage Earnings{% endblock %}</title>
+    {% block header %}
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    {% endblock %}
+    {% block styles %}
+    <style>
+        .modal-dialog {
+            width: 100% !important;
+            height: 100% !important;
+        }
+        @media (min-width: 576px) {
+            .modal-dialog {
+                max-width: 80% !important; /* Override max width */
+                margin: 1.75rem auto;
+            }
+        }
+
+        .card{
+            padding: 0px;
+        }
+        .card-body{
+            padding: 10px 0px 0px 10px;
+        }
+        .card-title {
+            font-size: 1rem;
+            margin: 0.1rem;
+        }
+        @keyframes blinker {
+                50% { opacity: 0; }
+            }
+        </style>
+    {% endblock %}
+    {% block content %}
+   
+        <!-- Top Section for Report and Summary -->
+        <div class="row">
+            <div class="col-md-8">
+                <h2>Report</h2>
+                <canvas id="earningsChart"></canvas> <!-- Placeholder for chart -->
+            </div>
+            <div class="col-md-4">
+                <h2 style="margin-bottom: 40px;">Earnings Summary</h2>
+                
+                <div id="earningsSummary" class="row"> <!-- Added class "row" for horizontal stacking -->
+                    <div class="col-6"> <!-- Each card takes half the width -->
+                        <div class="card mb-3"> <!-- Added margin-bottom for spacing -->
+                            <div class="card-body">
+                                <h4 class="card-title" id="grossEarnings">Gross Earnings:</h4> <!-- Moved label to a new line -->
+                                <p>$0.00</p> <!-- Moved value to a new line -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6"> <!-- Each card takes half the width -->
+                        <div class="card mb-3">
+                            <div class="card-body">
+                                <h4 class="card-title" id="cleaningExpenses">Cleaning Expenses:</h4> <!-- Moved label to a new line -->
+                                <p>$0.00</p> <!-- Moved value to a new line -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6"> <!-- Each card takes half the width -->
+                        <div class="card mb-3">
+                            <div class="card-body">
+                                <h4 class="card-title" id="otherExpenses">Other Expenses:</h4> <!-- Moved label to a new line -->
+                                <p>$0.00</p> <!-- Moved value to a new line -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6"> <!-- Each card takes half the width -->
+                        <div class="card mb-3">
+                            <div class="card-body">
+                                <h4 class="card-title" id="serviceCharges">Service Charges:</h4> <!-- Moved label to a new line -->
+                                <p style="color: red; animation: blinker 1s linear infinite;">$0.00</p> <!-- Moved value to a new line and added blinking effect -->
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div class="col-6"> <!-- Each card takes half the width -->
+                        <div class="card mb-3">
+                            <div class="card-body">
+                                <h4 class="card-title" id="netEarnings">Net Earnings:</h4> <!-- Moved label to a new line -->
+                                <p style="color: red; animation: blinker 1s linear infinite;">$0.00</p> <!-- Moved value to a new line and added blinking effect -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6"> <!-- Each card takes half the width -->
+                        <div class="card mb-3">
+                            <div class="card-body">
+                                <h4 class="card-title" id="paidOut">Paid Out:</h4> <!-- Moved label to a new line -->
+                                <p>$0.00</p> <!-- Moved value to a new line -->
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-6"> <!-- Each card takes half the width -->
+                        <div class="card mb-3">
+                            <div class="card-body">
+                                <h4 class="card-title" id="due">Due:</h4> <!-- Moved label to a new line -->
+                                <p style="color: red; animation: blinker 1s linear infinite;">$0.00</p> <!-- Moved value to a new line and added blinking effect -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12 mt-5">
+                <h2>Earnings Report</h2>
+            </div>
+        </div>
+        <!-- Bottom Section for Table Data -->
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        {% if current_user.username != 'deepan' %} <!-- Check if user is not 'deepan' -->
+                        <th>Area</th>
+                        {% endif %}
+                        <th>Guest</th>
+                        <th>Booking From</th>
+                        <th>Booking To</th>
+                        <th>Nights</th>
+                        <th>Amount</th>
+                        {% if current_user.username != 'deepan' %} <!-- Check if user is not 'deepan' -->
+                        <th>Deepan Report</th>
+                        <th>Source</th>
+                        <th>Actions</th>
+                        {% endif %}
+                    </tr>
+                </thead>
+                <tbody id="EarningTableBody">
+                    <!-- Earnings will be populated here by JavaScript -->
+                </tbody>
+            </table>
+            <nav aria-label="Page navigation">
+                <ul class="pagination" id="paginationControls">
+                    <!-- Pagination controls will be populated here -->
+                </ul>
+            </nav>
+        </div>
+    
+    <!-- Create Earning Modal -->
+    <div class="modal fade" id="createEarningModal" tabindex="-1" role="dialog" aria-labelledby="createEarningModalLabel" aria-hidden="true" style="width: 100%; height: 100%;">
+        <div class="modal-dialog modal-fullscreen" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="createEarningModalLabel">Update Earning Details</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body d-flex justify-content-center align-items-center">
+                    <form id="createEarningForm" style="width: 100%; max-width: 80vw;">
+                        <input type="hidden" id="id" value="">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="Earning_type">Earning Type</label>
+                                    <input type="text" class="form-control" id="Earning_type" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="Area_code">Area</label>
+                                    <input type="text" class="form-control" id="Area_code">
+                                </div>
+                                <div class="form-group">
+                                    <label for="Confirmation_code">Confirmation Code</label>
+                                    <input type="text" class="form-control" id="Confirmation_code" disabled>
+                                </div>
+                                <div class="form-group">
+                                    <label for="booking_from">Booking From</label>
+                                    <input type="date" class="form-control" id="booking_from" required> <!-- Changed to type="date" -->
+                                </div>
+                                <div class="form-group">
+                                    <label for="booking_to">Booking To</label>
+                                    <input type="date" class="form-control" id="booking_to" required> <!-- Changed to type="date" -->
+                                </div>
+                            </div>
+                            <div class="col-md-6">  
+                                <div class="form-group">
+                                    <label for="Guest_name">Guest Name</label>
+                                    <input type="text" class="form-control" id="Guest_name">
+                                </div>
+                                <div class="form-group">
+                                    <label for="listing">Listing</label>
+                                    <input type="text" class="form-control" id="listing">
+                                </div>
+                                <div class="form-group">
+                                    <label for="deepan_report">Deepan Report</label>
+                                    <input type="text" class="form-control" id="deepan_report">
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary" id="createEarningButton">Update Earning Details</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endblock %}
+
+    {% block scripts %}
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Include Chart.js -->
+    <script>
+        const apiUrl = '/earnings';
+        const rowsPerPage = 10; // Maximum rows per page
+        let currentPage = 1; // Current page number
+        let earningsData = []; // Store fetched earnings data
+        let totalGrossEarnings = 0; // Initialize total gross earnings
+
+        // Function to fetch and display Earnings
+        function fetchEarnings() {
+            fetch(apiUrl)
+                .then(response => response.json())
+                .then(data => {
+                    earningsData = data; // Store data for pagination
+                    calculateTotalGrossEarnings(); // Calculate total gross earnings
+                    renderTable(); // Render the table with the first page
+                    renderPagination(); // Render pagination controls
+                    renderEarningsChart(); // Render the earnings chart
+                });
+        }
+
+        // Function to calculate total gross earnings and update net earnings and due
+        function calculateTotalGrossEarnings() {
+            totalGrossEarnings = earningsData.reduce((total, earning) => total + earning.amount, 0);
+            const totalCleaningExpenses = earningsData.reduce((total, earning) => total + earning.cleaning_expenses, 0) || 0    ;
+            const totalOtherExpenses = earningsData.reduce((total, earning) => total + earning.other_expenses, 0) || 0;
+            const totalServiceCharges = totalGrossEarnings * 0.25;
+            const totalPaidOut = earningsData.reduce((total, earning) => total + earning.paid_out, 0) || 0;
+
+            const deepanShare = earningsData.filter(earning => earning.area_code === 'EC' && earning.deepan_report === '1').reduce((total, earning) => total + earning.amount, 0);
+
+            const netEarnings = totalGrossEarnings - totalCleaningExpenses - totalOtherExpenses - totalServiceCharges;
+            let due = netEarnings - totalPaidOut;
+
+
+            document.getElementById('grossEarnings').innerText = `Gross Earnings:`; // Update label
+            document.querySelector('#grossEarnings + p').innerText = `£${totalGrossEarnings.toFixed(2)}`; // Update value
+
+            document.getElementById('cleaningExpenses').innerText = `Cleaning Expenses:`; // Update label
+            document.querySelector('#cleaningExpenses + p').innerText = `£${totalCleaningExpenses.toFixed(2)}`; // Update value
+
+            document.getElementById('otherExpenses').innerText = `Other Expenses:`; // Update label
+            document.querySelector('#otherExpenses + p').innerText = `£${totalOtherExpenses.toFixed(2)}`; // Update value
+
+            document.getElementById('serviceCharges').innerText = `Service Charges:`; // Update label
+            document.querySelector('#serviceCharges + p').innerText = `Upcoming`; // Update value
+
+            {% if current_user.username != 'deepan' %}
+            document.getElementById('serviceCharges').innerText = `Deepan's Share:`; // Update label
+            // document.querySelector('#serviceCharges + p').innerText = `£${deepanShare.toFixed(2)}`; // Update value
+            document.querySelector('#serviceCharges + p').innerText = `Upcoming`; // Update value
+            {% endif %}
+
+            document.getElementById('netEarnings').innerText = `Net Earnings:`; // Update label
+            // document.querySelector('#netEarnings + p').innerText = `£${netEarnings.toFixed(2)}`; // Update value
+            document.querySelector('#netEarnings + p').innerText = `Upcoming`; // Update value
+
+            document.getElementById('paidOut').innerText = `Paid Out:`; // Update label
+            document.querySelector('#paidOut + p').innerText = `£${totalPaidOut.toFixed(2)}`; // Update value
+            
+            document.getElementById('due').innerText = `Due:`; // Update label
+            document.querySelector('#due + p').innerText = `£${due.toFixed(2)}`; // Update value
+
+            document.querySelector('#due + p').innerText = `Upcoming`; // Update value
+        }
+
+        // Function to render the table based on the current page
+        function renderTable() {
+            const tableBody = document.getElementById('EarningTableBody');
+            tableBody.innerHTML = '';
+            const start = (currentPage - 1) * rowsPerPage;
+            const end = start + rowsPerPage;
+            earningsData.sort((a, b) => new Date(b.start_date) - new Date(a.start_date));
+            const paginatedData = earningsData.slice(start, end);
+
+            paginatedData.forEach((Earnings, index) => {
+                const row = document.createElement('tr');
+                const payoutDate = new Date(Earnings.date).toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' }).replace(/ /g, '-');
+                const startDate = new Date(Earnings.start_date).toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' }).replace(/ /g, '-');
+                const endDate = new Date(Earnings.end_date).toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' }).replace(/ /g, '-');
+                row.innerHTML = `
+                    <td>${start + index + 1}</td> <!-- Incremented ID -->
+                    {% if current_user.username != 'deepan' %} <!-- Check if user is not 'deepan' -->
+                    <td>${Earnings.area_code}</td>
+                    {% endif %} 
+                    <td>${Earnings.guest}</td>
+                    <td>${startDate}</td>
+                    <td>${endDate}</td>
+                    <td>${Earnings.nights}</td>
+                    <td>${Earnings.amount}</td>
+                    {% if current_user.username != 'deepan' %} <!-- Check if user is not 'deepan' -->
+                    <td>${Earnings.deepan_report}</td>
+                    <td>${Earnings.source}</td>
+                    <td>
+                        <button class="btn btn-warning btn-sm" onclick="editEarning(${Earnings.id})">Modilfy</button>
+                    </td>
+                    {% endif %}
+                `;
+                tableBody.appendChild(row);
+            });
+        }
+
+        // Function to render pagination controls
+        function renderPagination() {
+            const paginationControls = document.getElementById('paginationControls');
+            paginationControls.innerHTML = '';
+            const totalPages = Math.ceil(earningsData.length / rowsPerPage);
+
+            for (let i = 1; i <= totalPages; i++) {
+                const li = document.createElement('li');
+                li.className = 'page-item' + (i === currentPage ? ' active' : '');
+                li.innerHTML = `<a class="page-link" href="#" onclick="changePage(${i}, event)">${i}</a>`;
+                paginationControls.appendChild(li);
+            }
+        }
+
+        // Function to change the current page
+        function changePage(page, event) {
+            currentPage = page;
+            renderTable(); // Re-render the table for the new page
+            renderPagination(); // Re-render pagination controls
+            // Prevent scrolling to the top
+            event.preventDefault(); // Prevent default anchor behavior
+            document.getElementById('EarningTableBody').scrollIntoView({ behavior: 'smooth' }); // Scroll to the table
+        }
+
+        // Function to create a new Earning
+        document.getElementById('createEarningForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const newEarning = {
+                id: document.getElementById('id').value,
+                deepan_report: document.getElementById('deepan_report').value,
+                area_code: document.getElementById('Area_code').value
+            };
+            
+            console.log(newEarning);
+
+            if (newEarning.id) {
+                fetch(`${apiUrl}/${newEarning.id}`, {
+                    method: 'PUT',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(newEarning)
+                })
+                .then(response => response.json())
+                .then(data => {
+                    alert(data.message);
+                    $('#createEarningModal').modal('hide'); // Hide modal
+                    fetchEarnings();
+                });
+            } else {
+                fetch(apiUrl, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(newEarning)
+                })
+                .then(response => response.json())
+                .then(data => {
+                    alert(data.message);
+                    $('#createEarningModal').modal('hide'); // Hide modal
+                    fetchEarnings();
+                });
+            }
+        });
+    
+        // Function to delete a Earning
+        function deleteEarning(id) {
+            fetch(`${apiUrl}/${id}`, {
+                method: 'DELETE'
+            })
+            .then(response => response.json())
+            .then(data => {
+                alert(data.message);
+                fetchEarnings();
+            });
+        }
+    
+        // Function to edit a Earning
+        function editEarning(id) {
+            fetch(`${apiUrl}/${id}`)
+                .then(response => response.json())
+                .then(Earning => {
+                    // Populate the form with the Earning data
+                    console.log(Earning);
+                    document.getElementById('id').value = Earning.id;
+                    document.getElementById('Earning_type').value = Earning.type;
+                    document.getElementById('Area_code').value = Earning.area_code;
+                    document.getElementById('Confirmation_code').value = Earning.confirmation_code;
+                    document.getElementById('booking_from').value = new Date(Earning.start_date).toISOString().split('T')[0]; // Format to YYYY-MM-DD
+                    document.getElementById('booking_to').value = new Date(Earning.end_date).toISOString().split('T')[0]; // Format to YYYY-MM-DD
+                    document.getElementById('Guest_name').value = Earning.guest;
+                    document.getElementById('listing').value = Earning.listing;
+                    document.getElementById('deepan_report').value = Earning.deepan_report;
+
+                    document.getElementById('createEarningButton').innerHTML = 'Update Earning Details';
+                    // Show the modal
+                    $('#createEarningModal').modal('show');
+                });
+        }
+    
+        // Function to initialize modal form fields
+        function initializeModalFields() {
+            document.getElementById('id').value = '';
+            document.getElementById('Earning_type').value = '';
+            document.getElementById('Area_code').value = '';
+            document.getElementById('Confirmation_code').value = '';
+            document.getElementById('booking_from').value = '';
+            document.getElementById('booking_to').value = '';
+            document.getElementById('Guest_name').value = '';
+            document.getElementById('listing').value = '';
+            document.getElementById('deepan_report').value = '';
+            document.getElementById('createEarningButton').innerHTML = 'Update Earning Details'; // Reset button text
+        }
+
+        // Reset form fields when the modal is shown
+        $(document).ready(function() {
+            $('#createEarningModal').on('hide.bs.modal', function () {
+                initializeModalFields(); 
+                console.log("Modal is being cleaned");
+            });
+        });
+    
+        // Function to render the earnings chart
+        function renderEarningsChart() {
+            const ctx = document.getElementById('earningsChart').getContext('2d');
+            const monthlyEarnings = {};
+            const currentYear = new Date().getFullYear();
+            const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+
+            // Initialize monthly earnings for all months
+            months.forEach(month => {
+                monthlyEarnings[month] = 0;
+            });
+
+            // Calculate monthly earnings
+            earningsData.forEach(earning => {
+                const payoutDate = new Date(earning.end_date);
+                if (payoutDate.getFullYear() === currentYear) {
+                    const monthIndex = payoutDate.getMonth(); // Get month index (0-11)
+                    const monthName = months[monthIndex]; // Get month name
+                    monthlyEarnings[monthName] += earning.amount; // Sum up the earnings
+                }
+            });
+
+            // Prepare data for the chart
+            const labels = months; // Use the months array for labels
+            const data = months.map(month => monthlyEarnings[month]); // Get earnings data for each month
+
+            // Create the chart
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'Monthly Earnings',
+                        data: data,
+                        backgroundColor: 'rgba(0, 123, 255, 0.2)', // Changed to blue
+                        borderColor: 'rgba(0, 123, 255, 1)', // Changed to blue
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+        }
+
+        // Fetch Earnings on page load
+        document.addEventListener('DOMContentLoaded', fetchEarnings);
+    </script>
+    {% endblock %}

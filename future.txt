@@ -1,0 +1,32 @@
+# Mock physical rooms (replace with dynamic logic if needed)
+physical_rooms = {
+    "AC001": [],
+    "AC002": [],
+    "AC003": [],
+    "EC001": [],
+    "EC002": [],
+    "EC003": [],
+    "EC101": [],
+}
+
+room_colors = {
+    "AC001": "lightcoral",
+    "AC002": "lightblue",
+    "AC003": "lightgreen",
+    "EC001": "lightyellow",
+    "EC002": "lightpink",
+    "EC003": "lightgray",
+    "EC101": "lightcyan",
+    "EC102": "lightgoldenrodyellow",
+    "EC103": "lightseagreen"
+}
+
+<!-- <div> -->
+<!-- <div class="legend" style="width: 100%; margin-left: 100px; display: none; flex-wrap: wrap;">
+    <h3 style="margin-right: 20px;">Room Legend</h3>
+    {% for room, color in room_colors.items() %}
+    <div style="margin-right: 20px; display: flex; align-items: center;">
+        <span style="background-color: {{ color }}; width: 20px; height: 20px; display: inline-block;"></span>{{ room }}
+    </div>
+    {% endfor %}
+</div> -->

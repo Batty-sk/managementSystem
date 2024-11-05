@@ -1,0 +1,369 @@
+{% extends "base.html" %}
+    <title>{% block title %}Manage Earnings{% endblock %}</title>
+    {% block header %}
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    {% endblock %}
+    {% block styles %}
+    <style>
+        .modal-dialog {
+            width: 100% !important;
+            height: 100% !important;
+        }
+        @media (min-width: 576px) {
+            .modal-dialog {
+                max-width: 80% !important; /* Override max width */
+                margin: 1.75rem auto;
+            }
+        }
+        </style>
+    {% endblock %}
+    {% block content %}
+   
+        
+        <!-- Top Section for Report and Summary -->
+        <div class="row">
+            <div class="col-md-8">
+                <h2>Report</h2>
+                <canvas id="earningsChart"></canvas> <!-- Placeholder for chart -->
+            </div>
+            <div class="col-md-4">
+                <h2>Earnings Summary</h2>
+                <div id="earningsSummary">
+                    <!-- Summary content will be populated here -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom Section for Table Data -->
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Area</th>
+                        <th>Guest</th>
+                        <th>Start Date</th>
+                        <th>End Date</th>
+                        <th>Nights</th>
+                        <th>Amount</th>
+                        <th>Deepan Report</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="EarningTableBody">
+                    <!-- Earnings will be populated here by JavaScript -->
+                </tbody>
+            </table>
+            <nav aria-label="Page navigation">
+                <ul class="pagination" id="paginationControls">
+                    <!-- Pagination controls will be populated here -->
+                </ul>
+            </nav>
+        </div>
+    
+
+    <!-- Create Earning Modal -->
+    <div class="modal fade" id="createEarningModal" tabindex="-1" role="dialog" aria-labelledby="createEarningModalLabel" aria-hidden="true" style="width: 100%; height: 100%;">
+        <div class="modal-dialog modal-fullscreen" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="createEarningModalLabel">Create New Earning</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body d-flex justify-content-center align-items-center">
+                    <form id="createEarningForm" style="width: 100%; max-width: 80vw;">
+                        <input type="hidden" id="id" value="">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="Earning_name">Earning Name</label>
+                                    <input type="text" class="form-control" id="Earning_name" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="room">Room</label>
+                                    <input type="text" class="form-control" id="room">
+                                </div>
+                                <div class="form-group">
+                                    <label for="platform">Platform</label>
+                                    <input type="text" class="form-control" id="platform">
+                                </div>
+                                <div class="form-group">
+                                    <label for="minimum_price">Minimum Price</label>
+                                    <input type="number" class="form-control" id="minimum_price" step="0.01">
+                                </div>
+                                <div class="form-group">
+                                    <label for="bed_type">Bed Type</label>
+                                    <input type="number" class="form-control" id="bed_type" step="0.01">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="area_code">Area Code</label>
+                                    <input type="text" class="form-control" id="area_code">
+                                </div>
+                                <div class="form-group">
+                                    <label for="platform_url">Platform URL</label>
+                                    <input type="text" class="form-control" id="platform_url">
+                                </div>
+                                <div class="form-group">
+                                    <label for="platform_account">Platform Account</label>
+                                    <input type="text" class="form-control" id="platform_account">
+                                </div>
+                                <div class="form-group">
+                                    <label for="maximum_price">Maximum Price</label>
+                                    <input type="number" class="form-control" id="maximum_price" step="0.01">
+                                </div>
+                                <div class="form-group">
+                                    <label for="no_of_bed">Number of Beds</label>
+                                    <input type="number" class="form-control" id="no_of_bed">
+                                </div>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary" id="createEarningButton">Create Earning</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endblock %}
+
+    {% block scripts %}
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Include Chart.js -->
+    <script>
+        const apiUrl = '/earnings';
+        const rowsPerPage = 5; // Maximum rows per page
+        let currentPage = 1; // Current page number
+        let earningsData = []; // Store fetched earnings data
+
+        // Function to fetch and display Earnings
+        function fetchEarnings() {
+            fetch(apiUrl)
+                .then(response => response.json())
+                .then(data => {
+                    earningsData = data; // Store data for pagination
+                    renderTable(); // Render the table with the first page
+                    renderPagination(); // Render pagination controls
+                    renderEarningsChart(); // Render the earnings chart
+                });
+        }
+
+        // Function to render the table based on the current page
+        function renderTable() {
+            const tableBody = document.getElementById('EarningTableBody');
+            tableBody.innerHTML = '';
+            const start = (currentPage - 1) * rowsPerPage;
+            const end = start + rowsPerPage;
+            const paginatedData = earningsData.slice(start, end);
+
+            paginatedData.forEach((Earnings, index) => {
+                const row = document.createElement('tr');
+                const payoutDate = new Date(Earnings.date).toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' }).replace(/ /g, '-');
+                const startDate = new Date(Earnings.start_date).toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' }).replace(/ /g, '-');
+                const endDate = new Date(Earnings.end_date).toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' }).replace(/ /g, '-');
+                row.innerHTML = `
+                    <td>${start + index + 1}</td> <!-- Incremented ID -->
+                    <td>${Earnings.area_code}</td>
+                    <td>${Earnings.guest}</td>
+                    <td>${startDate}</td>
+                    <td>${endDate}</td>
+                    <td>${Earnings.nights}</td>
+                    <td>${Earnings.amount}</td>
+                    <td>${Earnings.deepan_report}</td>
+                    <td>
+                        <button class="btn btn-warning btn-sm" onclick="editEarning(${Earnings.id})">Edit</button>
+                        <button class="btn btn-danger btn-sm" onclick="deleteEarning(${Earnings.id})">Delete</button>
+                    </td>
+                `;
+                tableBody.appendChild(row);
+            });
+        }
+
+        // Function to render pagination controls
+        function renderPagination() {
+            const paginationControls = document.getElementById('paginationControls');
+            paginationControls.innerHTML = '';
+            const totalPages = Math.ceil(earningsData.length / rowsPerPage);
+
+            for (let i = 1; i <= totalPages; i++) {
+                const li = document.createElement('li');
+                li.className = 'page-item' + (i === currentPage ? ' active' : '');
+                li.innerHTML = `<a class="page-link" href="#" onclick="changePage(${i})">${i}</a>`;
+                paginationControls.appendChild(li);
+            }
+        }
+
+        // Function to change the current page
+        function changePage(page) {
+            currentPage = page;
+            renderTable(); // Re-render the table for the new page
+            renderPagination(); // Re-render pagination controls
+        }
+
+        // Function to create a new Earning
+        document.getElementById('createEarningForm').addEventListener('submit', function(event) {
+
+            event.preventDefault();
+            const newEarning = {
+                id: document.getElementById('id').value,
+                Earning_name: document.getElementById('Earning_name').value,
+                room: document.getElementById('room').value,
+                area_code: document.getElementById('area_code').value,
+                platform: document.getElementById('platform').value,
+                platform_url: document.getElementById('platform_url').value,
+                platform_account: document.getElementById('platform_account').value,
+                minimum_price: parseFloat(document.getElementById('minimum_price').value),
+                maximum_price: parseFloat(document.getElementById('maximum_price').value),
+                bed_type: parseFloat(document.getElementById('bed_type').value),
+                no_of_bed: parseInt(document.getElementById('no_of_bed').value)
+            };
+            
+            console.log(newEarning);
+
+            if (newEarning.id) {
+                fetch(`${apiUrl}/${newEarning.id}`, {
+                    method: 'PUT',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(newEarning)
+                })
+                .then(response => response.json())
+            .then(data => {
+                alert(data.message);
+                
+                $('#createEarningModal').modal('hide'); // Hide modal
+                fetchEarnings();
+
+                });
+            } else {
+                fetch(apiUrl, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(newEarning)
+            })
+            .then(response => response.json())
+            .then(data => {
+                alert(data.message);
+                $('#createEarningModal').modal('hide'); // Hide modal
+                fetchEarnings();
+                });
+            }
+        });
+    
+        // Function to delete a Earning
+        function deleteEarning(id) {
+            fetch(`${apiUrl}/${id}`, {
+                method: 'DELETE'
+            })
+            .then(response => response.json())
+            .then(data => {
+                alert(data.message);
+                fetchEarnings();
+            });
+        }
+    
+        // Function to edit a Earning
+        function editEarning(id) {
+            fetch(`${apiUrl}/${id}`)
+                .then(response => response.json())
+                .then(Earning => {
+                    // Populate the form with the Earning data
+                    console.log(Earning);
+                    document.getElementById('id').value = Earning.id;
+                    document.getElementById('Earning_name').value = Earning.Earning_name;
+                    document.getElementById('room').value = Earning.room;
+                    document.getElementById('area_code').value = Earning.area_code;
+                    document.getElementById('platform').value = Earning.platform;
+                    document.getElementById('platform_url').value = Earning.platform_url;
+                    document.getElementById('platform_account').value = Earning.platform_account;
+                    document.getElementById('minimum_price').value = Earning.minimum_price;
+                    document.getElementById('maximum_price').value = Earning.maximum_price;
+                    document.getElementById('bed_type').value = Earning.bed_type;
+                    document.getElementById('no_of_bed').value = Earning.no_of_bed;
+
+                    document.getElementById('createEarningButton').innerHTML = 'Update Earning';
+                    // Show the modal
+                    $('#createEarningModal').modal('show');
+                });
+        }
+    
+        // Function to initialize modal form fields
+        function initializeModalFields() {
+            document.getElementById('id').value = '';
+            document.getElementById('Earning_name').value = '';
+            document.getElementById('room').value = '';
+            document.getElementById('area_code').value = '';
+            document.getElementById('platform').value = '';
+            document.getElementById('platform_url').value = '';
+            document.getElementById('platform_account').value = '';
+            document.getElementById('minimum_price').value = '';
+            document.getElementById('maximum_price').value = '';
+            document.getElementById('bed_type').value = '';
+            document.getElementById('no_of_bed').value = '';
+            document.getElementById('createEarningButton').innerHTML = 'Create New Earning'; // Reset button text
+        }
+
+        // Reset form fields when the modal is shown
+        $(document).ready(function() {
+            $('#createEarningModal').on('hide.bs.modal', function () {
+                initializeModalFields(); 
+                console.log("Modal is being cleaned");
+            });
+        });
+    
+        // Function to render the earnings chart
+        function renderEarningsChart() {
+            const ctx = document.getElementById('earningsChart').getContext('2d');
+            const monthlyEarnings = {};
+
+            // Calculate monthly earnings
+            earningsData.forEach(earning => {
+                const payoutDate = new Date(earning.date); // Define payoutDate here
+                console.log("payoutDate", payoutDate);
+                console.log("earning.date", earning.date);
+                const monthYear = `${payoutDate.getFullYear()}-${payoutDate.getMonth() + 1}`; // Format: YYYY-MM
+
+                if (!monthlyEarnings[monthYear]) {
+                    monthlyEarnings[monthYear] = 0;
+                }
+                monthlyEarnings[monthYear] += earning.amount; // Sum up the earnings
+            });
+
+            // Prepare data for the chart
+            const labels = Object.keys(monthlyEarnings);
+            const data = Object.values(monthlyEarnings);
+
+            // Create the chart
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'Monthly Earnings',
+                        data: data,
+                        backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                        borderColor: 'rgba(75, 192, 192, 1)',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+        }
+
+        // Fetch Earnings on page load
+        document.addEventListener('DOMContentLoaded', fetchEarnings);
+    </script>
+    {% endblock %}

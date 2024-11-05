@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block title %}Upload Reservations{% endblock %}
+{% block content %}
+        <h1>Upload Reservations CSV</h1>
+        <form action="{{ url_for('upload_csv') }}" method="post" enctype="multipart/form-data">
+            <label for="file">Select CSV file:</label>
+            <input type="file" id="file" name="file" accept=".csv" required>
+            
+            {{ edit_1 }}
+            <label for="listing">Select Listing:</label>
+            <select id="listing_name" name="listing_name" required>
+                {% for option in dropdown_options %}
+                    <option value="{{ option }}">{{ option }}</option>
+                {% endfor %}
+            </select>
+            <input type="hidden" name="source" value="{{ option }}">  <!-- Add this line -->
+            {{ edit_2 }}
+            
+            <button type="submit">Upload</button>
+        </form>
+        
+{% endblock %}

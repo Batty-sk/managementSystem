@@ -1,0 +1,192 @@
+{% extends "base.html" %}
+    
+    <title>{% block title %}Calendar{% endblock %}</title>
+    {% block header %}
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- FullCalendar CSS -->
+    <link href='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.css' rel='stylesheet' />
+    {% endblock %}
+    {% block styles %}
+        <style>
+        /* Custom styles for the legend */
+        .legend-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 5px;
+        }
+        .legend-color {
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+            border-radius: 3px;
+        }
+        /* Adjust calendar container for responsiveness */
+        #calendar {
+            width: 100%;
+            max-width: 1200px;
+        }
+
+        /* Mobile-specific styles */
+        @media (max-width: 767.98px) {
+            .legend-item {
+                font-size: 14px;
+            }
+            #calendar {
+                margin: 20px auto;
+            }
+            .container.my-4 {
+                padding: 0 15px;
+            }
+        }
+
+        #summary {
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            padding: 10px;
+            border-radius: 5px;
+            max-height: 500px;
+            overflow-y: auto; /* Enable scrolling for the entire summary section */
+        }
+
+        #summary table {
+            width: 100%;
+            border-collapse: collapse;
+            table-layout: fixed; /* Ensure fixed table layout for consistent column widths */
+        }
+
+        #summary thead th {
+            background-color: #f2f2f2;
+            position: sticky;
+            top: 0;
+            z-index: 2;
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+            min-width: 100px;
+        }
+
+        #summary tbody td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+            min-width: 100px;
+        }
+
+        /* Optional: Improve table aesthetics */
+        #summary tbody tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        #summary tbody tr:hover {
+            background-color: #eaeaea;
+        }
+    </style>
+    {% endblock %}
+
+</head>
+{% block content %}
+        <div class="row">
+            <!-- Status Legend -->
+            <div class="col-md-2 col-sm-12 mb-4">
+                <h2>Status</h2>
+                <br>
+                <div class="legend">
+                    {% for status, color in status_colors.items() %}
+                    <div class="legend-item">
+                        <span class="legend-color" style="background-color: {{ color }};"></span>{{ status }}
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+            
+            <!-- Calendar -->
+            <div class="col-md-10 col-sm-12">
+                {{ edit_1 }}
+                <div id='calendar'></div>
+            </div>
+        </div>
+    {% endblock %}
+    
+
+    {% block scripts %}
+
+    <!-- jQuery -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
+    <!-- Moment.js -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js'></script>
+    <!-- FullCalendar JS -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.js'></script>
+    <!-- Bootstrap 5 JS Bundle (includes Popper) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            // Initialize FullCalendar
+            $('#calendar').fullCalendar({
+                events: '/api/bookings_detail',  // Existing detailed bookings endpoint
+                // Other FullCalendar configurations...
+            });
+
+            // Fetch and display summary data
+            fetch('/api/bookings_summary')
+                .then(response => response.json())
+                .then(data => {
+                    displaySummary(data);
+                });
+
+            function displaySummary(data) {
+                const summaryBody = document.getElementById('summary-body');
+                summaryBody.innerHTML = ''; // Clear existing data
+
+                data.forEach(day => {
+                    const row = document.createElement('tr');
+
+                    const dateCell = document.createElement('td');
+                    dateCell.textContent = day.date;
+                    row.appendChild(dateCell);
+
+                    const checkinsCell = createSummaryCell(day.checkins, day.ac_count, day.ec_count);
+                    row.appendChild(checkinsCell);
+
+                    const stayingCell = createSummaryCell(day.currently_staying, day.ac_count, day.ec_count);
+                    row.appendChild(stayingCell);
+
+                    const checkoutsCell = createSummaryCell(day.checkouts, day.ac_count, day.ec_count);
+                    row.appendChild(checkoutsCell);
+
+                    summaryBody.appendChild(row);
+                }); 
+            }
+
+            function createSummaryCell(total, acCount, ecCount) {
+                const cell = document.createElement('td');
+                const table = document.createElement('table');
+                table.style.width = '100%';
+
+                const totalRow = document.createElement('tr');
+                const totalCell = document.createElement('td');
+                totalCell.textContent = total;
+                totalCell.style.fontWeight = 'bold';
+                totalRow.appendChild(totalCell);
+                table.appendChild(totalRow);
+
+                const acRow = document.createElement('tr');
+                const acCell = document.createElement('td');
+                acCell.textContent = `AC: ${acCount}`;
+                acCell.style.color = 'lightcoral'; // AC color
+                acRow.appendChild(acCell);
+                table.appendChild(acRow);
+
+                const ecRow = document.createElement('tr');
+                const ecCell = document.createElement('td');
+                ecCell.textContent = `EC: ${ecCount}`;
+                ecCell.style.color = 'black'; // EC color
+                ecRow.appendChild(ecCell);
+                table.appendChild(ecRow);
+
+                cell.appendChild(table);
+                return cell;
+            }
+        });
+    </script>
+    {% endblock %}
